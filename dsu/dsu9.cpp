@@ -81,3 +81,10 @@ int32_t main()
     }
 }
 
+// My code takes 124 ms, 600 KB
+
+// GPT code takes 109 ms, 3300 KB
+
+// GPT code: I dont know,   
+// Same same but different
+
