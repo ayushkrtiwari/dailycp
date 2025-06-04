@@ -13,7 +13,7 @@ int findparent(int x,vector<int>&parent)
     return parent[x]=findparent(parent[x],parent);
 }
 
-void merge(int a, int b, vector<int> &parent, vector<int> &size, vector<int> &sum, long long &mxsum)
+void merge(int a, int b, vector<int> &parent, vector<int> &size, vector<int> &sum)
 {
     int parenta = findparent(a,parent);
     int parentb = findparent(b,parent);
@@ -22,14 +22,12 @@ void merge(int a, int b, vector<int> &parent, vector<int> &size, vector<int> &su
     {
         size[parentb]+=size[parenta];
         sum[parentb]+=sum[parenta];
-        mxsum = max(mxsum,sum[parentb]);
         parent[parenta]=parentb;
     }
     else
     {
         size[parenta]+=size[parentb];
         sum[parenta]+=sum[parentb];
-        mxsum = max(mxsum,sum[parenta]);
         parent[parentb]=parenta;
     }
 }
@@ -66,11 +64,11 @@ int32_t main()
         int x = st.top();
         st.pop();
         ispresent[x] = true;
-        mxsum = max(mxsum,a[x]);
         if(x>0 and ispresent[x-1]) 
-        merge(x-1,x,parent,size,sum,mxsum);
+        merge(x-1,x,parent,size,sum);
         if(x<n-1 and ispresent[x+1]) 
-        merge(x+1,x,parent,size,sum,mxsum);
+        merge(x+1,x,parent,size,sum);
+        mxsum = max(mxsum,sum[findparent(x,parent)]);
         res.push(mxsum); 
     }
     res.pop();
@@ -87,6 +85,10 @@ int32_t main()
 
 // GPT code: I dont know,   
 // Same same but different
+
+// If someone notices major difference,
+// do inform me.
+// I have tried 
 
 #include <bits/stdc++.h>
 using namespace std;
