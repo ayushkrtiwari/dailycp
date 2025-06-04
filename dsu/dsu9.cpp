@@ -88,3 +88,59 @@ int32_t main()
 // GPT code: I dont know,   
 // Same same but different
 
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+int n;
+ll a[100005], s[100005], ans[100005];
+int p[100005], parent[100005];
+bool on[100005];
+
+int findparent(int x)
+{ 
+    if(x==parent[x]) return x;
+    return parent[x]=findparent(parent[x]);
+}
+void unite(int x,int y)
+{
+    x=findparent(x); y=findparent(y);
+    if(x!=y)
+    {
+        parent[y]=x;
+        s[x]+=s[y];
+    }
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cin>>n;
+    for(int i=0;i<n;i++) cin>>a[i];
+    for(int i=0;i<n;i++)
+    {
+        cin>>p[i];
+        p[i]--;
+    }
+    for(int i=0;i<n;i++){
+        parent[i]=i;
+        s[i]=0;
+        on[i]=false;
+    }
+    ll mx=0;
+    for(int i=n-1;i>=0;i--){
+        ans[i]=mx;
+        int idx=p[i];
+        on[idx]=true;
+        parent[idx]=idx;
+        s[idx]=a[idx];
+        if(idx>0 && on[idx-1]) unite(idx,idx-1);
+        if(idx+1<n && on[idx+1]) unite(idx,idx+1);
+        mx=max(mx,s[findparent(idx)]);
+    }
+    for(int i=0;i<n;i++){
+        cout<<ans[i]<<"\n";
+    }
+    return 0;
+}
