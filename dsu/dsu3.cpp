@@ -7,6 +7,10 @@
 // Main idea is when you need to do individual(node to group) merge and if node is the parent then it's hard to merge.
 // Hence use 2nd layer instead of directly making them parents
 
+// Simple DSU question. 2 layer addition
+
+// Keep from 1 to N, 2nd layer from N+1 to 2*N the parent
+
 #include <bits/stdc++.h>
 using namespace std;
 
