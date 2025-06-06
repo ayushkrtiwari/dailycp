@@ -1,4 +1,4 @@
-// // जय श्री राम                              JAI SHREE RAM
+// जय श्री राम                              JAI SHREE RAM
 
 // https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/algorithm/a-69-5718e916/
 
