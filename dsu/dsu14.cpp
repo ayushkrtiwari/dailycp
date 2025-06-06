@@ -4,7 +4,7 @@
 
 // MST, Kruskal or Prim's
 // Main idea is to store all edges and sort them then take them in increasing order
-// cp3 first example
+// cp3-algorithm first example
 
 
 #include <bits/stdc++.h>
