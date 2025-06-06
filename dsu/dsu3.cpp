@@ -1,3 +1,5 @@
+// जय श्री राम                              JAI SHREE RAM
+
 // https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/algorithm/team-up-2-8dc5d882/
 
 // 2nd layer, individual and group merge
