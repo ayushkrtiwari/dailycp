@@ -2,7 +2,9 @@
 
 // https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/algorithm/a-69-5718e916/
 
-
+// MST, Kruskal or Prim's
+// Main idea is to store all edges and sort them then take them in increasing order
+// cp3 first example
 
 
 #include <bits/stdc++.h>
