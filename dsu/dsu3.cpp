@@ -1,5 +1,10 @@
 // https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/practice-problems/algorithm/team-up-2-8dc5d882/
 
+// 2nd layer, individual and group merge
+// Most is simple but node to group merge is different
+// Main idea is when you need to do individual(node to group) merge and if node is the parent then it's hard to merge.
+// Hence use 2nd layer instead of directly making them parents
+
 #include <bits/stdc++.h>
 using namespace std;
 
