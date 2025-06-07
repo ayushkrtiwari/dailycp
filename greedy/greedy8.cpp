@@ -36,6 +36,14 @@ int main()
         // operation. Thus, the equation: a1 - a2 > b1 - b2 but since both a2 and b2
         // are already negative, we should use +, hence a1 + a2 > b1 + b2
     });
+    // You need not worry for initial value of r while sorting
+    // Only you should order in matter: Which one should I take first 
+    // so that other is also feasible and take best generalised possible way for all
+
+    // We will only check according to r only while iteration after all sorting order has been done
+    // Since we did sorting in best order, we will check if this is feasible or not
+    // If this is not feasible, then no other order will be feasible since it was the best out of them
+
     int ps = positive.size();
     int ns = negative.size();
     
