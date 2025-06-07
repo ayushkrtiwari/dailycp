@@ -1,4 +1,9 @@
+// जय श्री राम                              JAI SHREE RAM
+
 // https://codeforces.com/problemset/problem/22/D
+
+// Greedy, Segment Endpoints
+// Sort wrt segment endpoints then take the first endpoint and cancel out the lines and repeat this
 
 #include <bits/stdc++.h>
 using namespace std;
