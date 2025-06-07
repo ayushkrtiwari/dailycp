@@ -1,5 +1,8 @@
 // https://codeforces.com/contest/1203/problem/F1
 
+// Trick: Divide into two vectors, one having positive rating change, other having negative rating change
+// Rest all given below
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
