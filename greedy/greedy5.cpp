@@ -1,5 +1,10 @@
 // https://codeforces.com/problemset/problem/2034/B
 
+// Implementation
+// Trick: Greedily check for m-1 consecutive 0s then change next k if mth one is also 0
+// eg: 3 1 3 010 -> 1 (111), not 2
+// eg: 6 3 2 000000 -> 1 (001100), not 2 or 3
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
