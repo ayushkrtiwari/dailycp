@@ -2,6 +2,12 @@
 
 // https://leetcode.com/problems/stone-game-vi/description/
 
+// Trick: Let 2 card (A1,A2),(B1,B2)
+// You want (myscore-otherscore) to get better
+// Thus myscore should increase while otherscore should decrease for overall to increase
+// Hence: A1 - B2 >= B1 - A2 or A1 + A2 >= B1 + B2
+// Thus Sort wrt this Exchange Argument Expression
+
 class Solution {
 public:
     int stoneGameVI(vector<int>& aliceValues, vector<int>& bobValues) {
