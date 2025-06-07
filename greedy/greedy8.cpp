@@ -1,3 +1,5 @@
+// जय श्री राम                              JAI SHREE RAM
+
 // https://codeforces.com/contest/1203/problem/F1
 
 // Trick: Divide into two vectors, one having positive rating change, other having negative rating change
