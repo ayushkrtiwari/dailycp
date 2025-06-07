@@ -1,5 +1,8 @@
 // https://cses.fi/problemset/task/1629
 
+// Interval, Sorting, Min endpoint
+// Sort by Endpoints and take the one with min endpoint and starting greater than last endpoint
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
