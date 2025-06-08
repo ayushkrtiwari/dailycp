@@ -1,5 +1,10 @@
 // https://codeforces.com/contest/2111/problem/E
 
+// Exchange argument
+// Trick: Only do for: (x,y): (b,a),(c,b),(c,a)
+// Just the thing you miss is: you can do b->c->a
+// Also that while doing c->b->a count this operation only if (c,b) comes before(b,a). Similarly for b->c->a
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
