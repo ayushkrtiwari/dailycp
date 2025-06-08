@@ -1,4 +1,13 @@
+
+
 // https://codeforces.com/problemset/problem/322/B
+
+// Trick: Take red, green, blue boquet but more optimised solution is there:
+// take 0 mixed boquet and then form the 3
+// take 1 mixed boquet and then form the 3
+// take 2 mixed boquet and then form the 3
+// take max of the 3 cases
+// other number of mixed boquet means you can instead form the individual boquets
 
 #include<bits/stdc++.h>
 using namespace std;
