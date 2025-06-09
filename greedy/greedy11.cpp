@@ -2,6 +2,8 @@
 
 
 // Dimension Reduction: Reduce trees into array or 2D into 1D
+// Trick: You only need to pair two odd cells always
+// Keep track of last visited cell
 
 #include<bits/stdc++.h>
 using namespace std;
