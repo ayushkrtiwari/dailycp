@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://atcoder.jp/contests/abc109/tasks/abc109_d#:~:text=Operation%3A%20Choose%20a%20cell%20that%20was%20not%20chosen,of%20coins.%20All%20values%20in%20input%20are%20integers.
 
 
