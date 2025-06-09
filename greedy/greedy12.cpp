@@ -1,5 +1,7 @@
 // https://atcoder.jp/contests/abc080/tasks/abc080_d
 
+// Sweep Line, Scan Line Algorithm, Partial Sum
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
