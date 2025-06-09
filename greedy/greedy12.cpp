@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://atcoder.jp/contests/abc080/tasks/abc080_d
 
 // Sweep Line, Scan Line Algorithm, Partial Sum
