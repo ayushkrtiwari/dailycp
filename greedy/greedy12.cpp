@@ -1,6 +1,7 @@
 // https://atcoder.jp/contests/abc080/tasks/abc080_d
 
 // Sweep Line, Scan Line Algorithm, Partial Sum
+// For each channel, store partial sum and run sweep line algorithm to track max channels running at the same time
 
 #include<bits/stdc++.h>
 using namespace std;
