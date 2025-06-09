@@ -1,6 +1,7 @@
 // https://codeforces.com/problemset/problem/979/B
 
 // Trick: It's easy to observe for N < rem.
+// For N > rem: for even changes, you can easily bring back original just by a -> x -> a
 
 #include<bits/stdc++.h>
 using namespace std;
