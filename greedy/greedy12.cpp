@@ -2,6 +2,7 @@
 
 // Sweep Line, Scan Line Algorithm, Partial Sum
 // For each channel, store partial sum and run sweep line algorithm to track max channels running at the same time
+// Minimum number of recorders needed = Maximum number of channels running at any time
 
 #include<bits/stdc++.h>
 using namespace std;
