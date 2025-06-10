@@ -2,6 +2,7 @@
 
 // Exchange Argument, Sorting
 // Trick: You need to take only jobs which has return time <= M
+// Create a 2D vector where ith row stores work which must be completed by (M - A)th day
 
 #include<bits/stdc++.h>
 using namespace std;
