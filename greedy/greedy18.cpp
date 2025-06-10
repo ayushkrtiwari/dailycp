@@ -4,7 +4,9 @@
 // Trick: You need to take only jobs which has return time <= M
 // Create a 2D vector where ith row stores work which must be completed by (M - A)th day
 // Now use priority queue and travel backwards and store till that day all the rewards and pick the max reward of them all
-
+// Forward Traversal creates a gap, since say, if you can pick a work on 3rd day, then you can also pick it at 1st,2nd days
+// but you are not able to push it into priority queue before 3rd day and thus if (1,5),(2,5),(3,10),(3,10): M = 3
+// Forward Traversal will give result as 20 while Backward Traversal gives 25
 
 #include<bits/stdc++.h>
 using namespace std;
