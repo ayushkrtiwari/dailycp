@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://codeforces.com/problemset/problem/979/B
 
 // Trick: It's easy to observe for N < rem.
