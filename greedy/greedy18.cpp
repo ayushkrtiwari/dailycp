@@ -1,6 +1,7 @@
 // https://atcoder.jp/contests/abc137/tasks/abc137_d
 
 // Exchange Argument, Sorting
+// Trick: You need to take only jobs which has return time <= M
 
 #include<bits/stdc++.h>
 using namespace std;
