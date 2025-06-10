@@ -3,6 +3,8 @@
 // Exchange Argument, Sorting
 // Trick: You need to take only jobs which has return time <= M
 // Create a 2D vector where ith row stores work which must be completed by (M - A)th day
+// Now use priority queue and travel backwards and store till that day all the rewards and pick the max reward of them all
+
 
 #include<bits/stdc++.h>
 using namespace std;
