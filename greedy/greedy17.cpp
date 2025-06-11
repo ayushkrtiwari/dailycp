@@ -1,5 +1,6 @@
 // https://atcoder.jp/contests/abc178/tasks/abc178_f
 
+// Derangement, No Overlap Intersection, Disjoint Interval, Cyclic Shift, All possible rotation values
 
 #include <bits/stdc++.h>
 using namespace std;
