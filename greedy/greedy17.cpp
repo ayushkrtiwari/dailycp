@@ -5,6 +5,9 @@
 // For each number, there will be 1 segment both in A and B of length >= 0. 
 // You need to shift by a number say x. 
 // Sort the array with taking elements as pair to keep info of index as : {element, index}
+// Let's say A as red line, B as blue line then we need to rotate in such a way that they do not intersect
+// When blue line is right to red line, then Bstart + x > Rend implies x > Rend - Bstart
+// When blue line is left to red line, then Bend + x < Rstart implies x < Rstart - Bend
 
 
 #include <bits/stdc++.h>
