@@ -10,7 +10,10 @@
 // When blue line is left to red line, then Bend + x < Rstart implies x < Rstart - Bend
 // So we get the forbidden range of x: [Rstart - Bend, Rend - Bstart]
 // Thus, allowed range in mod N: (Rend - Bstart, Rstart - Bend + N) (mod N)
-
+// To calculate for start and end of numbers in A and B, form new vectors lesstilla and lesstillb for A,B respectively
+// Now, store at i in lesstilla all values <= i in A and similarly for lesstillB
+// Now, range of segment of number i is (lesstilla[i - 1], lesstilla[i]]
+// Thus, starting point of number i is lesstilla[i - 1] + 1 while ending point is lesstilla[i]
 
 #include <bits/stdc++.h>
 using namespace std;
