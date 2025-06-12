@@ -8,6 +8,8 @@
 // Let's say A as red line, B as blue line then we need to rotate in such a way that they do not intersect
 // When blue line is right to red line, then Bstart + x > Rend implies x > Rend - Bstart
 // When blue line is left to red line, then Bend + x < Rstart implies x < Rstart - Bend
+// So we get the forbidden range of x: [Rstart - Bend, Rend - Bstart]
+// Thus, allowed range in mod N: (Rend - Bstart, Rstart - Bend + N) (mod N)
 
 
 #include <bits/stdc++.h>
