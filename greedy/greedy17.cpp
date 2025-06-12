@@ -2,6 +2,8 @@
 
 // Derangement, No Overlap Intersection, Disjoint Interval, Cyclic Shift, All possible rotation values
 
+// For each number, there will be 1 segment both in A and B of length >= 0. 
+
 #include <bits/stdc++.h>
 using namespace std;
 
