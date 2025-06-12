@@ -3,6 +3,9 @@
 // Derangement, No Overlap Intersection, Disjoint Interval, Cyclic Shift, All possible rotation values
 
 // For each number, there will be 1 segment both in A and B of length >= 0. 
+// You need to shift by a number say x. 
+// Sort the array with taking elements as pair to keep info of index as : {element, index}
+
 
 #include <bits/stdc++.h>
 using namespace std;
