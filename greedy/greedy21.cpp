@@ -1,5 +1,7 @@
 // https://codeforces.com/problemset/problem/2052/F
 
+// You can use DP.
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
