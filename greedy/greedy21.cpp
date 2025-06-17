@@ -1,6 +1,7 @@
 // https://codeforces.com/problemset/problem/2052/F
 
 // You can use DP.
+// You can use greedy too.
 
 #include<bits/stdc++.h>
 using namespace std;
