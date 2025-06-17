@@ -2,6 +2,11 @@
 
 // You can use DP.
 // You can use greedy too.
+// Just do vertical placement if both up and down are available.
+// Else do horizontal placement.
+// If any place still left after all placements, then no solution feasible
+// If at any point there is 2 * 2 is to be filled, then multiple solution
+// Else unique solution only
 
 #include<bits/stdc++.h>
 using namespace std;
