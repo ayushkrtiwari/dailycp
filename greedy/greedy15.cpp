@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://atcoder.jp/contests/abc178/tasks/abc178_f
 
 // One pass, two pointer, Group aware, Greedy Swap
