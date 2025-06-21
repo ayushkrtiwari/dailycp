@@ -1,5 +1,6 @@
 // https://codeforces.com/contest/1889/problem/B
 
+// Topic: Exchange Argument, Sorting on unique property
 
 #include<bits/stdc++.h>
 using namespace std;
