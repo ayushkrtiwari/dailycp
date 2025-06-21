@@ -31,6 +31,18 @@ int32_t main()
             pr[i].second = i + 1;
         }
         
+        // You can choose any of the sorting methods below:
+        
+        // METHOD 1:
+
+        // sort(pr.begin() + 1, pr.end(), [](auto &qa, auto &qb)
+        // {
+        //     if(qa.first.second == qb.first.second) return qa.first.first > qb.first.first;
+        //     return qa.first.second < qb.first.second;
+        // });
+        
+        // METHOD 2:
+
         sort(pr.begin() + 1, pr.end(), [c](auto &qa, auto &qb)
         {
             if(qa.second * c - qa.first.first == qb.second * c - qb.first.first) 
