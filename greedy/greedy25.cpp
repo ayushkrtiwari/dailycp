@@ -14,6 +14,34 @@ int32_t main()
         int n,c;
         cin>>n>>c;
 
+        // INITIAL WRONG APPROACH OF TAKING edges(1,i) but sorted by a[i]/i
+
+        // vector<pair<int,int>> a(n);
+        // for(int i = 0; i < n; i++)
+        // {
+        //     cin>>a[i].first;
+        //     a[i].second = i + 1;
+        // }
+        // auto cmp = [&](auto &pa, auto &pb)
+        // {
+        //     if(pa.first * pb.second == pb.first * pa.second) return pa.second < pb.second;
+        //     return pa.first * pb.second < pb.first * pa.second;
+        // };
+        // sort(a.begin(), a.end(), cmp);
+        // bool possible = true;
+        // int sum = a[0].first;
+        // for(int i = 1; i < n; i++)
+        // {
+        //     if(sum < 1LL * a[i - 1].second * a[i].second * c)
+        //     {
+        //         possible = false;
+        //         break;
+        //     }
+        //     else
+        //     sum += a[i].first;
+        // }
+        
+        // RIGHT APPROACH
         
         vector<int> a(n);
         for(auto &x:a)
