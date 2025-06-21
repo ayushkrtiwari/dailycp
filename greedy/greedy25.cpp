@@ -7,6 +7,8 @@
 // Formalize/simplify the statement.
 // Don't be afraid to do a little algebra. Those are essential skills.
 
+// For minimum i.j.c, take i = 1 as best option, and now add other cities most suitable
+
 #include<bits/stdc++.h>
 using namespace std;
 # define int long long int
