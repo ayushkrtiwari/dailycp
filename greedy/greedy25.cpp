@@ -11,6 +11,10 @@
 // Let B be sum of population added till now and now we are adding another city i,
 // hence we need to satisfy: B + a[i] >= i.j.c
 // B + a[i] >= j.c means B >= j.c - a[i]
+// Now say this property, j.c - a[i] be d[i], thus we want to take minimum d[i] as best suitable
+// Hence, lesser d[i], better the addition condition suitability
+// Hence, we sort cities in terms of j.c - a[i] in ascending order
+// and take edges one by one and if condition breaks, then not possible
 
 #include<bits/stdc++.h>
 using namespace std;
