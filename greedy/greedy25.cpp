@@ -1,6 +1,11 @@
 // https://codeforces.com/contest/1889/problem/B
 
 // Topic: Exchange Argument, Sorting on unique property
+// Trick: Separation of Variables fyi, where you split the equation into 2 parts, 
+// the 2 being independent of each other, so that only either the LHS or RHS is dependent on i
+// while the other part is independent of it
+// Formalize/simplify the statement.
+// Don't be afraid to do a little algebra. Those are essential skills.
 
 #include<bits/stdc++.h>
 using namespace std;
