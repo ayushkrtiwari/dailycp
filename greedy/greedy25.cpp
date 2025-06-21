@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://codeforces.com/contest/1889/problem/B
 
 // Topic: Exchange Argument, Sorting on unique property
