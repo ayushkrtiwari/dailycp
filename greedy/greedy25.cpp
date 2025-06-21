@@ -8,6 +8,9 @@
 // Don't be afraid to do a little algebra. Those are essential skills.
 
 // For minimum i.j.c, take i = 1 as best option, and now add other cities most suitable
+// Let B be sum of population added till now and now we are adding another city i,
+// hence we need to satisfy: B + a[i] >= i.j.c
+// B + a[i] >= j.c means B >= j.c - a[i]
 
 #include<bits/stdc++.h>
 using namespace std;
