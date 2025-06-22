@@ -1,5 +1,7 @@
 // https://codeforces.com/problemset/problem/2052/A
 
+// Trick: Most of the part is answered in comments. Just this is unique sorting problem
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
