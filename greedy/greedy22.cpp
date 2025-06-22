@@ -32,6 +32,13 @@ int main()
     //     }
     // }
     
+    // this above method will produce wrong result since say:
+    // you are at i = 2, and swapped element x to 4 then when you reach 4, you again start swapping it
+    // thus this produces wrong result
+    // so instead of swapping it together, swap both processes independently, that is one at a time
+    
+    // so below we will first sort c into decreasing order and then afterwards we sort into ascending
+    
     // 5 1 2 4 3
     
     for(int i = 0; i < n; i++) // if traversing forward, swap elements backward so you dont encounter them again
