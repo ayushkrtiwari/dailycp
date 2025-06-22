@@ -10,6 +10,27 @@ int main()
     for(auto &x: c)
     cin>>x;
     vector<pair<int,int>> res;
+    // a to c will take more time complexity
+    // c to a is fast since positions in a is known 
+    // if you are traversing forward, do cars backward or vice-versa.
+    
+    // the above points are wrong, since you can check if element has reached position in c
+    // for(int i = 0; i < n; i++)
+    // {
+    //     for(int j = i; j > 0; j--)
+    //     {
+    //         // assert(c[j] > 0 and c[j - 1] > 0);
+    //         res.push_back({c[j], c[j - 1]});
+    //         swap(c[j], c[j - 1]);
+    //     }
+    //     int x = c[0] - 1;
+    //     for(int j = 0; j < x; j++)
+    //     {
+    //         // assert(c[j] > 0 and c[j + 1] > 0);
+    //         res.push_back({c[j], c[j + 1]});
+    //         swap(c[j], c[j + 1]);
+    //     }
+    // }
     
     // 5 1 2 4 3
     
