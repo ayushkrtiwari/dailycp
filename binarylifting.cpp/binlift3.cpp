@@ -94,6 +94,11 @@ int32_t main() {
                         // which will be wrong since even at no jump we are at max n, so we do
                         // assign n for each jump from n
 
+                        // but the doubt is there, that for higher bits j(>0), 
+                        // i will have actually reached n first by some other node only, 
+                        // and at that point it would have done max(mx, n - i) so afterwards if it gets -1, 
+                        // thus it wont affect since i have already the same answer in my mx
+                        // so why do we do binlift[n][j] = n for all j > 0
         if(binlift[i][j - 1] != -1)
         binlift[i][j] = binlift[binlift[i][j - 1]][j - 1];
         
