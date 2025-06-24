@@ -1,6 +1,6 @@
 // https://www.codechef.com/problems/LGSEG?tab=statement
 
-
+// This is my first implementation which got TLE 
 
 #include <bits/stdc++.h>
 using namespace std;
