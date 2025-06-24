@@ -108,5 +108,25 @@ int32_t main() {
             }
         }
         cout<<mx<<"\n";
+        
+        
+        
+        // int mx = 0;
+        // int goodlength = 0;
+        // int cnt = 0;
+        // for(int i = 0; i < n; i++)
+        // {
+        //     int j = i;
+        //     while(cnt < k and j < n and !(next[j] == j))
+        //     {
+        //         goodlength += next[j] - j;
+        //         cnt++;
+        //         j = next[j];
+        //     }
+        //     cnt = 0;
+        //     mx = max(mx, goodlength);
+        //     goodlength = 0;
+        // }
+        // cout<<mx<<"\n";
     }
 }
