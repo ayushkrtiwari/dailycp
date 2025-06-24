@@ -1,5 +1,8 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://www.codechef.com/problems/LGSEG?tab=statement
 
+// Binary lifting, Binary Search Prefix Sum
 // This is my first implementation which got TLE 
 // Trick: Just build next vector which stores next node to reach with 1 jump
 // Use binary search on prefix array better than 2 pointer
