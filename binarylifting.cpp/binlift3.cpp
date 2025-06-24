@@ -84,7 +84,9 @@ int32_t main() {
             binlift[i][0] = (upper_bound(prefix.begin(), prefix.end(), i > 0 ? prefix[i - 1] + s : s) - prefix.begin());
             if(binlift[i][0] > n)  binlift[i][0] = -1;
         }
-        binlift[n][0] = n;
+        binlift[n][0] = n; // i missed this.it's important since we are doing node - i,
+                        // which wants next node if we can take the element, so since we can
+                        // take n - 1 say at a case, then we will be doing n - i not (n - 1) - i
         for(int j = 1; j < LOG; j++)
         for(int i = 0; i <= n; i++) // done for i == n too since if n jumps to n only according
                         // to above prefix binary search method and practically too, since
