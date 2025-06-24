@@ -54,6 +54,9 @@ int main() {
 }
 _________________________________________________________________________
 
+// we know what the next node is when we jump from a node, now we want to know
+// in kth node where will we reach, so we are doing binary lifting for k jumps.
+// since above approach gives O(n*k) TLE, when n = 10^5, k = 10^5, and a[] = [s,s,s,s,s....]
 
 #include <bits/stdc++.h>
 using namespace std;
