@@ -2,7 +2,10 @@
 
 // Not a cup of tea! Follow throughout the process
 // We could think of a naive solution, and it would get TLE
-
+// Then we thought to know at which position we should go next in a to save time.
+// So we stored the positions of all numbers in a in pos,
+// and to know which number will come next in permutation p, 
+// we stored their position in posinperm.
 
 #include <bits/stdc++.h>
 using namespace std;
