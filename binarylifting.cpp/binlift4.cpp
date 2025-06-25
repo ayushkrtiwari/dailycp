@@ -1,4 +1,8 @@
+
+
 // https://codeforces.com/contest/1142/problem/B
+
+// Topic: Binary Lifting Jump, RMQ, Binary Search
 
 // Not a cup of tea! Follow throughout the process
 // We could think of a naive solution, and it would get TLE
