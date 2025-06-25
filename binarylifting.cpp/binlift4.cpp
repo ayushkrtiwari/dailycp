@@ -29,8 +29,10 @@ int main() {
     {
         int npe = p[(posinperm[a[i]] + 1) % n];
         auto it = lower_bound(pos[npe].begin(), pos[npe].end(), i + 1); 
+        // we are doing binary search on pos not a, so its return value is iterator from pos, not actual position of npe
         if(it == pos[npe].end()) nxt[i] = m;
         else nxt[i] = *it;
+        // if element not found, next [i] = m - 0 = m, and we have valid elements in 0 to m - 1
     }
     int LOG = (int)log2(m) + 1;
     vector<vector<int>> binjump(m + 1, vector<int>(LOG, m));
