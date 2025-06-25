@@ -16,6 +16,8 @@
 // Even then we get TLE O(q*n) since subarray traversal per query
 // Hence, we use RMQ sparse table to store for each jump min value
 
+// Thus, now for each query we can easily compute solution in O(1)
+
 #include <bits/stdc++.h>
 using namespace std;
 
