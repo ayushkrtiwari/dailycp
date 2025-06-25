@@ -6,6 +6,9 @@
 // So we stored the positions of all numbers in a in pos,
 // and to know which number will come next in permutation p, 
 // we stored their position in posinperm.
+// Now, to know next position to jump on,
+// we stored in nxt[i] the next permutation element position to come in a
+// using binary search(upperbound) on positions of next upcoming permutation element
 
 #include <bits/stdc++.h>
 using namespace std;
