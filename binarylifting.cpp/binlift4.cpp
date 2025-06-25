@@ -10,6 +10,12 @@
 // we stored in nxt[i] the next permutation element position to come in a
 // using binary search(upperbound) on positions of next upcoming permutation element
 
+// Then, for saving time we precompute for each element in a,
+// position after n - 1 jump it will reach, since there are permutation of n element
+// hence n - 1 jump is enough, since cyclic rotated permutations are allowed.
+// Even then we get TLE O(q*n) since subarray traversal per query
+// Hence, we use RMQ sparse table to store for each jump min value
+
 #include <bits/stdc++.h>
 using namespace std;
 
