@@ -72,3 +72,64 @@ int main()
     // }
     // cout<<(sbsqncl3[0][0] + sbsqncl3[1][1] + sbsqncl3[2][1] + sbsqncl3[3][0]) % M <<"\n";
 }
+
+
+// FOR EASY UNDERSTANDING OF FINDING OF LENGTH > 2
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// #define M 998'244'353
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     vector<int> a(n);
+//     for(auto &x : a) cin >> x;
+//     for(auto &x : a) x %= 2;
+
+//     vector<int> sbsqncl1(2, 0);
+//     vector<vector<int>> sbsqncl2(2, vector<int>(2, 0));
+
+//     // seed the length-1 and length-2 tables with the first two elements
+//     sbsqncl1[a[0]]++;
+//     sbsqncl2[0][a[1]] += sbsqncl1[0];
+//     sbsqncl2[1][a[1]] += sbsqncl1[1];
+//     sbsqncl1[a[1]]++;
+//     long long ans = 0;
+
+//     for(int i = 2; i < n; i++){
+//         int b = a[i];
+
+//         // save old pairs of length>=2
+//         auto old = sbsqncl2;
+
+//         // 1) extend all old length>=2 subseqs (u,v)-> +b if u^v^b==0
+//         //    count them in ans, and re-insert into sbsqncl2[v][b]
+//         if ((0 ^ 0 ^ b) == 0) {
+//             ans = (ans + sbsqncl2[0][0]) % M;
+//             sbsqncl2[0][b] = (sbsqncl2[0][b] + old[0][0]) % M;
+//         }
+//         if ((0 ^ 1 ^ b) == 0) {
+//             ans = (ans + sbsqncl2[0][1]) % M;
+//             sbsqncl2[1][b] = (sbsqncl2[1][b] + old[0][1]) % M;
+//         }
+//         if ((1 ^ 0 ^ b) == 0) {
+//             ans = (ans + sbsqncl2[1][0]) % M;
+//             sbsqncl2[0][b] = (sbsqncl2[0][b] + old[1][0]) % M;
+//         }
+//         if ((1 ^ 1 ^ b) == 0) {
+//             ans = (ans + sbsqncl2[1][1]) % M;
+//             sbsqncl2[1][b] = (sbsqncl2[1][b] + old[1][1]) % M;
+//         }
+
+//         // 2) extend all length-1 subseqs to length-2
+//         sbsqncl2[0][b] = (sbsqncl2[0][b] + sbsqncl1[0]) % M;
+//         sbsqncl2[1][b] = (sbsqncl2[1][b] + sbsqncl1[1]) % M;
+
+//         // 3) record a new length-1 subseq ending in a[i-1]
+//         sbsqncl1[a[i]] = (sbsqncl1[a[i]] + 1) % M;
+//     }
+
+//     cout << ans << "\n";
+//     return 0;
+// }
