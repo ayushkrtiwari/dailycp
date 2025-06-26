@@ -5,6 +5,20 @@
  * The function calculates the count of subsequences of length greater than 2 with 3 continuous
  * elements of even sum in a given array.
  */
+// Here, you need to get count of all subsequences of length > 2 with 3 continuous
+// elements of even sum. 
+// So, when at i, we calculate subsequence of length 1 with 0 and 1 parity
+// and with it we calculate subsequence of length 2 with 00, 01, 10, 11 parity
+// and with this we calculate subsequence of length > 2 with 000, 001, 010,..., 111 parity
+// The v,a[i] parity in subsqncl2 at i states that we have such v,a[i] which contains all
+// subsequences already occurred till now with the condition u ^ v ^ a[i] == 0.
+// For the > 2, when we are at i, we calculate that if we have v,a[i] parity, then how many
+// u,v parity has been till now satisfying u^v^a[i] == 0. This way, we have all such 
+// subsequence satisfying > 2 parity of such kind. We calculate it by storing the answer
+// with sums of all parities satisfying the condition, and then we update them with the 
+// new i by checking if present v, a[i] has occurrences of u, v such that u ^ v ^ a[i] == 0
+// Now we update all the subsequences after these operations by a[i] and with sbsqncl1
+
 
 
 #include<bits/stdc++.h>
