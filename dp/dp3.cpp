@@ -19,7 +19,11 @@
 // new i by checking if present v, a[i] has occurrences of u, v such that u ^ v ^ a[i] == 0
 // Now we update all the subsequences after these operations by a[i] and with sbsqncl1
 
-
+// For more clearance, when we get a[i] we know the 2 previous subsequence values hence we 
+// add those values to ans that is sbsqncl2[u][v] since if we know value of a[i] 
+// then we are sure that we need to sum up those values of u, v 
+// which have come up as to satisfy the conditions,
+// not sbsqncl2[v][a[i]] which we still have not calculated.
 
 #include<bits/stdc++.h>
 using namespace std;
