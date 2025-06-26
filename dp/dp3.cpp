@@ -48,4 +48,27 @@ int main()
     }
     cout<<ans<<"\n";
     
+    // _________________________________________________________________________
+    
+    // Below is only for count of all subsequence of length 3, sum to be even
+    
+    // vector<vector<int>> sbsqncl3(4, vector<int>(2, 0));
+    // sbsqncl1[a[0]]++;
+    // sbsqncl2[0][a[1]] += sbsqncl1[0];
+    // sbsqncl2[1][a[1]] += sbsqncl1[1];
+    // // sbsqncl1[a[1]]++;
+    // for(int i = 2; i < n; i++)
+    // {
+    //     // storing all subsequence of length 2 with parity {0,0},{0,1},{1,0},{1,1}
+    //     // for(int i = 1; i < n; i++)
+    //     // c2[0][a[i]] += c1[0]
+    //     sbsqncl3[0][a[i]] = (sbsqncl3[0][a[i]] + sbsqncl2[0][0] % M) % M; // 00
+    //     sbsqncl3[1][a[i]] = (sbsqncl3[1][a[i]] + sbsqncl2[0][1] % M) % M; // 01
+    //     sbsqncl3[2][a[i]] = (sbsqncl3[2][a[i]] + sbsqncl2[1][0] % M) % M; // 10
+    //     sbsqncl3[3][a[i]] = (sbsqncl3[3][a[i]] + sbsqncl2[1][1] % M) % M; // 11
+    //     sbsqncl2[0][a[i]] = (sbsqncl2[0][a[i]] + sbsqncl1[0] % M) % M;
+    //     sbsqncl2[1][a[i]] = (sbsqncl2[1][a[i]] + sbsqncl1[1] % M) % M;
+    //     sbsqncl1[a[i - 1]] = (sbsqncl1[a[i - 1]] + 1) % M;
+    // }
+    // cout<<(sbsqncl3[0][0] + sbsqncl3[1][1] + sbsqncl3[2][1] + sbsqncl3[3][0]) % M <<"\n";
 }
