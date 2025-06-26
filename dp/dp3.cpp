@@ -1,5 +1,6 @@
 // https://codeforces.com/problemset/problem/1912/K
 
+// Topic: DP, subsequence, inclusion-exclusion
 
 /**
  * The function calculates the count of subsequences of length greater than 2 with 3 continuous
