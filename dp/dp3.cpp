@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://codeforces.com/problemset/problem/1912/K
 
 // Topic: DP, subsequence, inclusion-exclusion
