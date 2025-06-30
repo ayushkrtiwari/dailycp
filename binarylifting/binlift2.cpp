@@ -2,6 +2,7 @@
 
 // https://leetcode.com/problems/kth-ancestor-of-a-tree-node/
 
+// Topic: Binary Lifting, Tree
 // Trick: Just use binary lifting to pass constraints on finding kth ancestor
 
 #pragma GCC optimize("O3,unroll-loops,Ofast")
