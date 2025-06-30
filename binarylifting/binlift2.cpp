@@ -2,6 +2,8 @@
 
 // https://leetcode.com/problems/kth-ancestor-of-a-tree-node/
 
+// Trick: Just use binary lifting to pass constraints on finding kth ancestor
+
 #pragma GCC optimize("O3,unroll-loops,Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx")
 static const auto harsh = []() {
