@@ -82,6 +82,8 @@ int32_t main() {
         
         int LOG = (int)log2(n) + 1;
         vector<vector<int>> binlift(n + 1, vector<int>(LOG, -1));
+        // for(int i = 1; i < n; i++)
+        // binlift[i].assign(LOG, -1);
         for(int i = 0; i < n; i++)
         {
             binlift[i][0] = (upper_bound(prefix.begin(), prefix.end(), i > 0 ? prefix[i - 1] + s : s) - prefix.begin());
