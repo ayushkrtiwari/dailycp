@@ -56,9 +56,6 @@ int main() {
 }
 _________________________________________________________________________
 
-// we know what the next node is when we jump from a node, now we want to know
-// in kth node where will we reach, so we are doing binary lifting for k jumps.
-// since above approach gives O(n*k) TLE, when n = 10^5, k = 10^5, and a[] = [s,s,s,s,s....]
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -111,5 +108,25 @@ int32_t main() {
             }
         }
         cout<<mx<<"\n";
+        
+        
+        
+        // int mx = 0;
+        // int goodlength = 0;
+        // int cnt = 0;
+        // for(int i = 0; i < n; i++)
+        // {
+        //     int j = i;
+        //     while(cnt < k and j < n and !(next[j] == j))
+        //     {
+        //         goodlength += next[j] - j;
+        //         cnt++;
+        //         j = next[j];
+        //     }
+        //     cnt = 0;
+        //     mx = max(mx, goodlength);
+        //     goodlength = 0;
+        // }
+        // cout<<mx<<"\n";
     }
 }
