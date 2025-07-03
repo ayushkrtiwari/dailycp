@@ -89,7 +89,19 @@ int32_t main() {
         }
         binlift[n][0] = n; 
         for(int j = 1; j < LOG; j++)
-        for(int i = 0; i <= n; i++) 
+        for(int i = 0; i <= n; i++) // done for i == n too since if n jumps to n only according
+                        // to above prefix binary search method and practically too, since
+                        // when we are at n and we have k = 3, then the value of possible k 
+                        // can be 0, 1, 2, 3 jumps and so we can do 0 jump on each binlift[n][j]
+                        // since we want max of n - i and if we dont do such, we get -1 - i
+                        // which will be wrong since even at no jump we are at max n, so we do
+                        // assign n for each jump from n
+
+                        // but the doubt is there, that for higher bits j(>0), 
+                        // i will have actually reached n first by some other node only, 
+                        // and at that point it would have done max(mx, n - i) so afterwards if it gets -1, 
+                        // thus it wont affect since i have already the same answer in my mx
+                        // so why do we do binlift[n][j] = n for all j > 0
         if(binlift[i][j - 1] != -1)
         binlift[i][j] = binlift[binlift[i][j - 1]][j - 1];
         
