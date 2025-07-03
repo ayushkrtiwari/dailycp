@@ -12,7 +12,6 @@
 using namespace std;
 
 int main() {
-	// your code goes here
     int t;
     cin>>t;
     while(t--)
@@ -69,7 +68,6 @@ using namespace std;
 # define int long long
 
 int32_t main() {
-	// your code goes here
     int t;
     cin>>t;
     while(t--)
