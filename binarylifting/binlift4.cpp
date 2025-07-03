@@ -2,8 +2,6 @@
 
 // https://www.codechef.com/problems/LGSEG?tab=statement
 
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
