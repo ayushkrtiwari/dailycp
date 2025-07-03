@@ -27,10 +27,10 @@ int main() {
             next[i] = (upper_bound(prefix.begin(), prefix.end(), i > 0 ? prefix[i - 1] + s : s) - prefix.begin());
             if(next[i] > n) next[i] = n;
         }
-        
+        // [next[i - 1] to next[i] - 1]
         int mx = 0;
         int goodlength = 0;
-        int cnt = 0; 
+        int cnt = 0; // max value be k then break
         for(int i = 0; i < n; i++)
         {
             int j = i;
@@ -38,9 +38,13 @@ int main() {
             {
                 goodlength += next[j] - j;
                 cnt++;
+                // lastj = j;
                 j = next[j];
+                // cout<<".";
             }
             cnt = 0;
+            // cout<<next[j]<<" "<<i<<"\n";
+            // mx = max(mx, (next[j] > n ? n + 1 : j) - i);
             mx = max(mx, goodlength);
             goodlength = 0;
             // cout<<"\n";
