@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://codeforces.com/problemset/problem/2089/A
 
 // Bertrand's Theorem states that for any interval [x, 2x] there exists atleast one prime number
