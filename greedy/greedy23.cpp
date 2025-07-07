@@ -1,5 +1,8 @@
 // https://codeforces.com/problemset/problem/2089/A
 
+// Bertrand's Theorem states that for any interval [x, 2x] there exists atleast one prime number
+// Permutation: p, p - 1, p + 1, p - 2, p + 2, and when boundary reaches, print rest in any order
+// Extra: Legendre's Theorem states, for any interval [n^2, (n + 1)^2] there exists atleast 1 prime number
 
 #include<bits/stdc++.h>
 using namespace std;
