@@ -50,7 +50,9 @@ int main() {
         a[i]--;
         pos[a[i]].push_back(i);
     }
-    vector<int> nxt(m);
+    vector<int> nxt(m); // for next position of next permutation element in a
+    // next permuting element is: p[posinperm[a[i]] + 1]
+    // do binary search for its next position in a: lower_bound(pos[npe].begin(), pos[npe].end(), i)
     for(int i = 0; i < m; i++)
     {
         int npe = p[(posinperm[a[i]] + 1) % n];
