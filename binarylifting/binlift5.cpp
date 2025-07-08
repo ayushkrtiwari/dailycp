@@ -64,6 +64,9 @@ int main() {
     }
     int LOG = (int)log2(m) + 1;
     vector<vector<int>> binjump(m + 1, vector<int>(LOG, m));
+    // You can also initialise by -1, but also do both lines below together
+    // vector<vector<int>> binjump(m + 1, vector<int>(LOG, m));
+    // binjump[m][0] = m;
     for(int i = 0; i < m; i++)
     binjump[i][0] = nxt[i];
     
