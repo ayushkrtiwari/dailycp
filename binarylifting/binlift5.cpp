@@ -19,7 +19,13 @@
 // Even then we get TLE O(q*n) since subarray traversal per query
 // Hence, we use RMQ sparse table to store for each jump min value
 
+// Thus, now for each query we can easily compute solution in O(1)
 
+// In case of initialisation, you can initialise with -1 too but also do together as:
+// vector<vector<int>> binjump(m + 1, vector<int>(LOG, -1));
+// binjump[m][0] = m;
+// -1 wont bother since, whole binary lift table will be filled by next jump node position
+// hence after full filling, there wont be any place with -1 left
 
 #include <bits/stdc++.h>
 using namespace std;
