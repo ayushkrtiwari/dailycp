@@ -52,6 +52,9 @@ int main()
 	};
 	int currL = 0, currR = -1;
 	vector<int> res(q);
+
+	// Generally, remove and add takes O(log N) or O(1) in MO
+	// answer takes O(1)
 	for(auto &q: query)
 	{
 		while(currL < q.x) rmove(currL++);
