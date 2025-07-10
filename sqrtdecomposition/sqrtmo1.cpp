@@ -15,6 +15,8 @@ struct Query
 	int x, y, idx;
 };
 
+// 0-indexed blocks
+// Even blocks have forward traversal, odd have backward
 auto mo_cmp = [](Query &qa, Query &qb)
 {
 	if(qa.x/blocks != qb.x/blocks) return qa.x < qb.x;
