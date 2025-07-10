@@ -3,6 +3,7 @@
 // MO Algorithm, Distinct Elements in Range Query
 // This is easy version for elements upto 1e5
 // Hard Version with n upto 1e9 requires coordinate compression
+// Alternative method for hard version is using next and previous occurence vector for each indices
 
 #include<bits/stdc++.h>
 using namespace std;
