@@ -1,5 +1,7 @@
 // https://www.spoj.com/problems/DQUERY/
 
+// MO Algorithm, Distinct Elements in Range Query
+
 #include<bits/stdc++.h>
 using namespace std;
 
