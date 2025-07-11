@@ -1,5 +1,9 @@
 // https://codeforces.com/contest/221/problem/D
 
+// _________________________METHOD 1: PREVIOUS, NEXT LOCATIONS______________________________
+
+// Alternative: We can use pre and next array instead of coordinate compression
+
 #include<bits/stdc++.h>
 using namespace std;
 
