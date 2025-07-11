@@ -1,7 +1,7 @@
 // https://judge.yosupo.jp/problem/convolution_mod
 
 // Well I prefer this simple recursion method over bit reverse order manipulation
-
+// First Implementation of NTT, so would add notes wherever I missed
 
 #include <bits/stdc++.h>
 using namespace std;
