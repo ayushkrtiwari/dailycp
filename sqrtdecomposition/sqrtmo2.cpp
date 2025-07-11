@@ -9,6 +9,16 @@
 // respectively (equal to some infinity if this element doesn't exist.) 
 // We can use these arrays to quickly check whether or not some element occurs in an range.
 
+// Case 1: [l,r]→[l,r+1]
+// We add 1 if and only if r+1 has not occured in [l,r],  or equivalently, pre[r+1]<l
+
+// Case 2: [l,r]→[l,r−1]. We subtract 1 iff r
+// has not occured in [l,r−1]
+
+// Case 3: [l,r]→[l−1,r]. We add 1 iff l−1 has not occurned in [l,r], or equivalently, r<nxt[l−1]
+
+// Case 4: [l,r]→[l+1,r]. We subtract 1 iff l has not occured in [l+1,r].
+
 
 
 #include<bits/stdc++.h>
