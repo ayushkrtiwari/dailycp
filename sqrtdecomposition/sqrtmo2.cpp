@@ -4,6 +4,13 @@
 
 // Alternative: We can use pre and next array instead of coordinate compression
 
+// Consider arrays pre[i] and nxt[i], which equal the last location of the element i
+// and the next location of the element i,
+// respectively (equal to some infinity if this element doesn't exist.) 
+// We can use these arrays to quickly check whether or not some element occurs in an range.
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
