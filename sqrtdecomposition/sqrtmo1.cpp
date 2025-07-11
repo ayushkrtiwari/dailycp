@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://www.spoj.com/problems/DQUERY/
 
 // MO Algorithm, Distinct Elements in Range Query
