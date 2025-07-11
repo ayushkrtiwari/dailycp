@@ -35,7 +35,7 @@ vector<int> NTT(vector<int> &a, int invert)
     y0 = NTT(a0, invert);
     y1 = NTT(a1, invert);
     int angle = (MOD - 1) / n;
-    int wpow = (1ll * (invert ? modpow(primitive_root, MOD - 1 - angle): modpow(primitive_root, angle))) % MOD;
+    int wpow = (1ll * (invert ? modpow(primitive_root, MOD - 1 - angle): modpow(primitive_root, angle))) % MOD; 
     int w = 1;
     for(int i = 0; i < n/2; i++)
     {
@@ -54,7 +54,7 @@ int32_t main() {
     for(auto &x: a) cin>>x;
     for(auto &y: b) cin>>y;
     int N = 1;
-    while(N < n + m - 1) N <<= 1;
+    while(N < n + m - 1) N <<= 1; // N >= n + m - 1
     a.resize(N), b.resize(N);
     // vector<int> c(n + m);
     auto d = NTT(a, false);
@@ -69,8 +69,8 @@ int32_t main() {
     };
     auto mres = multiply();
     auto f = NTT(mres, true);
-    int ninv = modpow(N, MOD - 2);
-    for(auto &x: f) x = (x * 1ll * ninv) % MOD;
-    f.resize(n + m - 1);
+    int ninv = modpow(N, MOD - 2); // do N inverse not n inverse
+    for(auto &x: f) x = (x * 1ll * ninv) % MOD; 
+    f.resize(n + m - 1); // cut coefficients size to n + m - 1
     for(auto &x : f) cout<<x<<" ";
 }
