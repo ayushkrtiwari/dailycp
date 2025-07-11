@@ -14,4 +14,7 @@ inline bool operator<(const Query &a, const Query &b) {
 
 sort(query.begin(), query.end());
 
-______________________________________________________________________
+// ______________________________________________________________________
+
+// You can use unordered_map or any other data structure of O(1) operation in MO
+// but not any data structure over that, not even map or other of O(log n)
