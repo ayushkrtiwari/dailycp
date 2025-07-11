@@ -1,5 +1,8 @@
 // https://judge.yosupo.jp/problem/convolution_mod
 
+// Well I prefer this simple recursion method over bit reverse order manipulation
+
+
 #include <bits/stdc++.h>
 using namespace std;
 # define int long long
