@@ -19,7 +19,7 @@
 
 // Case 4: [l,r]→[l+1,r]. We subtract 1 iff l has not occured in [l+1,r].
 
-
+// _________________________METHOD 2: COORDINATE COMPRESSION_________________________________
 
 #include<bits/stdc++.h>
 using namespace std;
