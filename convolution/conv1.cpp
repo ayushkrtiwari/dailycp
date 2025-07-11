@@ -36,6 +36,7 @@ vector<int> NTT(vector<int> &a, int invert)
     y1 = NTT(a1, invert);
     int angle = (MOD - 1) / n;
     int wpow = (1ll * (invert ? modpow(primitive_root, MOD - 1 - angle): modpow(primitive_root, angle))) % MOD; 
+    // notes regarding primitive root, generators and primes attached as NTT in resources
     int w = 1;
     for(int i = 0; i < n/2; i++)
     {
@@ -70,7 +71,7 @@ int32_t main() {
     auto mres = multiply();
     auto f = NTT(mres, true);
     int ninv = modpow(N, MOD - 2); // do N inverse not n inverse
-    for(auto &x: f) x = (x * 1ll * ninv) % MOD; 
+    for(auto &x: f) x = (x * 1ll * ninv) % MOD; // multiply ninv here instead of in NTT function
     f.resize(n + m - 1); // cut coefficients size to n + m - 1
     for(auto &x : f) cout<<x<<" ";
 }
