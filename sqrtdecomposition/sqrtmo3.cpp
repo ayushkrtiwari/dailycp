@@ -1,5 +1,7 @@
 // https://codeforces.com/contest/86/problem/D
 
+// MO's Algo
+
 #include<bits/stdc++.h>
 using namespace std;
 # define int long long
