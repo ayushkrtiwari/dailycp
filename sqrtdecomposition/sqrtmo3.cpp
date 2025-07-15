@@ -46,7 +46,7 @@ int32_t main()
         int &prev = cnt[v];
         curr += (2*prev++ + 1) * v;
     };
-    
+    // the formula comes from equating the equation further
     auto remov = [&](int v)
     {
         int &prev = cnt[v];
