@@ -1,5 +1,6 @@
 // https://codeforces.com/contest/2014/problem/H
 
+// Topic: MO Range Query Algo, Coordinate Compression
 // Simply accessing and updating the vector and clearing the freq(max_element(a)) after each test case gave TLE on TC 93
 // Hence, coordinate compression
 
