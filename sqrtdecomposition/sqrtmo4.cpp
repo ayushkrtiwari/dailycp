@@ -6,6 +6,11 @@ using namespace std;
 # define int long long
 
 const int blocks = 7e2; 
+// this actually doesn't matter,particularly in this question, this got 514ms while other type got 515ms
+// but its said that for most questions, this is better, since globally declared const variable gets its inverse value
+// its much cheaper than all divisions done in other type, since compiler gets its inverse multiplication value in compile time only
+// and since multiplication is much much cheaper than division, this reduces time complexity.
+
 struct Query
 {
     int x, y, idx;
