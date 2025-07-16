@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://codeforces.com/contest/2014/problem/H
 
 // Topic: MO Range Query Algo, Coordinate Compression
