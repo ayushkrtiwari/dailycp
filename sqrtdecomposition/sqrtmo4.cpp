@@ -1,5 +1,7 @@
 // https://codeforces.com/contest/2014/problem/H
 
+// Simply accessing and updating the vector and clearing the freq(max_element(a)) after each test case gave TLE on TC 93
+// Hence, coordinate compression
 
 #include<bits/stdc++.h>
 using namespace std;
