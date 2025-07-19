@@ -419,6 +419,11 @@ int main(){
         bigint c = a * b;
         if(c.a.empty()) cout<<0;
         else
+        // The resultant array is stored in chunks of width 9 with chunks reversed but characters in them in right order
+        // i.e., 100000010000 5050005000 -> 505,000,550,500,050,000,000 
+        // this is stored as {50000000, 550500, 505} 
+        // so iterate these chunks in reverse order and do x * 10 + d 
+        // do pad them to width 9 and fill with '0' characters
         {
             auto it = c.a.rbegin();
             cout<<*it;
