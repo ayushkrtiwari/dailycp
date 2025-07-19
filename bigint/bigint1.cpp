@@ -424,6 +424,13 @@ int main(){
         // this is stored as {50000000, 550500, 505} 
         // so iterate these chunks in reverse order and do x * 10 + d 
         // do pad them to width 9 and fill with '0' characters
+
+        // This will give error since we have chunks of width 9 stored in resultant array
+        // hence, we need to pad all the chunks by filling till pad of 9
+        // 100000010000 5050005000 -> 50555050050000000
+        // but right answer -> 505,000,550,500,050,000,000
+        // for(auto it = c.a.rbegin(); it < c.a.rend(); it++) 
+        // cout<<*it;
         {
             auto it = c.a.rbegin();
             cout<<*it;
