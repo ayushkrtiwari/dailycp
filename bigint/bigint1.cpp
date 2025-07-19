@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://www.spoj.com/problems/MUL/en/
 
 // BigInt Class, Karatsuba Multiplication
