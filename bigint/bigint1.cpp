@@ -1,5 +1,7 @@
 // https://www.spoj.com/problems/MUL/en/
 
+// BigInt Class, Karatsuba Multiplication
+
 #include <bits/stdc++.h>
 using namespace std;
  
