@@ -431,6 +431,12 @@ int main(){
         // but right answer -> 505,000,550,500,050,000,000
         // for(auto it = c.a.rbegin(); it < c.a.rend(); it++) 
         // cout<<*it;
+
+        // This is also wrong since the msb chunk should not be pad to width 9 and filled to 0
+        // 100000010000 5050005000 -> 000000505000550500050000000
+        // for(auto it = c.a.rbegin(); it < c.a.rend(); it++) 
+        // cout<<setw(9)<<setfill('0')<<*it;
+
         {
             auto it = c.a.rbegin();
             cout<<*it;
