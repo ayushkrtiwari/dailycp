@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/day-2-nim-game
 
+// Refer resources section for elaboration
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
