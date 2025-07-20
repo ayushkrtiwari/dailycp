@@ -1,5 +1,6 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/day-2-nim-game
 
+// Nim Game, Nim Sum, Sprague-Grundy Theorem, Game-Theory
 // Refer resources section for elaboration
 
 #include <cmath>
