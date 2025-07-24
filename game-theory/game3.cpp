@@ -1,6 +1,8 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers
 
 // Unbounded Normal Nim Game
+// Trick: Follow Resources and editorials for understanding.
+// Just it is that copy the opponent's move, thus nim sum or specific cases as always
 
 #include <cmath>
 #include <cstdio>
@@ -8,7 +10,6 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-
 
 int main() {
     int t;
