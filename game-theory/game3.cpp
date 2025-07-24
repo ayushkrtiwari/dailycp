@@ -1,8 +1,10 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers
 
 // Unbounded Normal Nim Game
 // Trick: Follow Resources and editorials for understanding.
-// Just it is that copy the opponent's move, thus nim sum or specific cases as always
+// Just it is that copy the opponent's move, thus nim sum or specific case as always.
 
 #include <cmath>
 #include <cstdio>
