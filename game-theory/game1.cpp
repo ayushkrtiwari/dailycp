@@ -5,6 +5,8 @@
 // Nim Game, Nim Sum, Sprague-Grundy Theorem, Game-Theory
 // Refer resources section for elaboration
 
+// Unbounded Normal Nim Game
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
