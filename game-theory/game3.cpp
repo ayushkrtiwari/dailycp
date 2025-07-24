@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers
 
+// Unbounded Normal Nim Game
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
