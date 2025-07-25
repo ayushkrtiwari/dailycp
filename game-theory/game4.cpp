@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/day-1-a-chessboard-game/problem
 
+// Bounded Normal Nim Game, Brute Force
+
 // Repetition on board, transition pattern
 // You can use 4,4 to tell about 8,8 hence % 4 thought.
 // Now only need to tell for first 4 * 4 square board (which automatically reproduces itself to whole board)
