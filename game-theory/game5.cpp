@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/misere-nim/problem
 
+// Unbounded Misere Nim Game
+
 // Misère Nim is exactly like the standard Nim game, except for one critical difference. 
 // If the size of every pile is 1, then we need to treat it as a special case where we count the number of piles. 
 // If the count is even, then the first player will win; if the count is odd, then the first player will lose.
