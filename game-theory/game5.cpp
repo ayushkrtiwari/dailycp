@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/misere-nim/problem
 
+// Misère Nim is exactly like the standard Nim game, except for one critical difference. 
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
