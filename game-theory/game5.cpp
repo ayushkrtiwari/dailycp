@@ -1,6 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/misere-nim/problem
 
 // Misère Nim is exactly like the standard Nim game, except for one critical difference. 
+// If the size of every pile is 1, then we need to treat it as a special case where we count the number of piles. 
 
 #include <cmath>
 #include <cstdio>
