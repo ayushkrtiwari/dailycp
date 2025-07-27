@@ -5,7 +5,7 @@
 // If there exists even coins at an index, then those coins are also to be ignored.
 // This is due to the fact that if player moves a coin to any lower index, the opponent will copy it as winning move
 // Now we only take care of positions where there are odd no of coins
-
+// Now, we take the positions of the odd coin piles as stones count in multiple piles, this way we can apply nim sum.
 #include <cmath>
 #include <cstdio>
 #include <vector>
