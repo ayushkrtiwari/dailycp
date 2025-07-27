@@ -3,6 +3,8 @@
 // Coins at index 0 are to be ignored
 // This is the similar version of nim game as previous, only twisted in form.
 // If there exists even coins at an index, then those coins are also to be ignored.
+// This is due to the fact that if player moves a coin to any lower index, the opponent will copy it as winning move
+// Now we only take care of positions where there are odd no of coins
 
 #include <cmath>
 #include <cstdio>
