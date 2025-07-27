@@ -1,5 +1,8 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/nimble
 
+// Coins at index 0 are to be ignored
+// This is the similar version of nim game as previous, only twisted in form.
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
