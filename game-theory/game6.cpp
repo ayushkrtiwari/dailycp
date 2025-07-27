@@ -2,6 +2,7 @@
 
 // Coins at index 0 are to be ignored
 // This is the similar version of nim game as previous, only twisted in form.
+// If there exists even coins at an index, then those coins are also to be ignored.
 
 #include <cmath>
 #include <cstdio>
