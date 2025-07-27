@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/nimble
 
+// Nimble Game, Unbounded Normal Nim Game
+
 // Coins at index 0 are to be ignored
 // This is the similar version of nim game as previous, only twisted in form.
 // If there exists even coins at an index, then those coins are also to be ignored.
