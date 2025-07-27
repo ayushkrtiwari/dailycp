@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/nimble
 
 // Nimble Game, Unbounded Normal Nim Game
