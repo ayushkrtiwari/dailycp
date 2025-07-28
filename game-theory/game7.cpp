@@ -1,7 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/day-2-poker-nim
 
-
 // Addition of chips has no effect since winning strategy is to copy the other player's move whenever they perform addition.
+// Hence addition does not affect our winning strategy and thus we can play it as normal nim game.
 
 #include <cmath>
 #include <cstdio>
