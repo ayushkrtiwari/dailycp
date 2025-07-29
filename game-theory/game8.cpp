@@ -8,6 +8,8 @@
 // Thus, this game is the same as a Nim game and our answer is the XOR of all Nim piles. 
 // If the Nim sum is 0, then player 2 wins; otherwise, player 1 wins.
 
+// Initially, I thought this but it got wrong:
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
