@@ -5,6 +5,8 @@
 // Imagine each tower as a Nim pile which has a Nimvalue equal to the number of prime factors of hi. 
 // Reducing a tower to its divisor is the same as taking away a non-zero prime factor from it.
 
+// Thus, this game is the same as a Nim game and our answer is the XOR of all Nim piles. 
+// If the Nim sum is 0, then player 2 wins; otherwise, player 1 wins.
 
 #include <cmath>
 #include <cstdio>
