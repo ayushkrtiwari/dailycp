@@ -1,5 +1,11 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers-2/problem
 
+// Nice question, even after knowing that it's similar problem but twisted version, 
+// it's not easy to solve. Nice editorial in simple words:
+// Imagine each tower as a Nim pile which has a Nimvalue equal to the number of prime factors of hi. 
+// Reducing a tower to its divisor is the same as taking away a non-zero prime factor from it.
+
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
