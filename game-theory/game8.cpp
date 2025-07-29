@@ -118,3 +118,36 @@ int main() {
     }
     return 0;
 }
+
+// ____________________________________________________________________________________________________________________
+
+// GPT gave grundy template for this, and then we need to perform nim sum after finding grundy of each height term.
+
+unordered_map<int,int> G;
+
+int grundy(int h) {
+    if (h == 1) return 0;
+    if (auto it = G.find(h); it != G.end())
+    return it->second;
+    unordered_set<int> s;
+    for (int d = 1; d*d <= h; ++d) {
+    if (h % d == 0) {
+        if (d < h)      s.insert(grundy(d));
+        if (h/d < h)    s.insert(grundy(h/d));
+    }
+    }
+    int g = 0;
+    while (s.count(g)) ++g;
+    return G[h] = g;
+}
+
+// C++17 or above special “if with initializer” syntax. 
+// You can both declare/initialize a variable and test it in the same if statement:
+
+// if ( auto it = G.find(h);  // initializer: declare `it` and call `G.find(h)`
+//      it != G.end()         // condition: only enter the body if `it` is valid
+//    )
+// {
+//     // here `it` is in scope and guaranteed != G.end()
+//     return it->second;
+// }
