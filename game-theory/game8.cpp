@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers-2/problem
 
+// Unbounded Normal Nim Game
+
 // Nice question, even after knowing that it's similar problem but twisted version, 
 // it's not easy to solve. Nice editorial in simple words:
 // Imagine each tower as a Nim pile which has a Nimvalue equal to the number of prime factors of hi. 
