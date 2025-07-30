@@ -2,6 +2,9 @@
 
 // Calculate grundy for all piles and check if nim sum is zero or non-zero
 // First, I tried for implementing the second solution but it failed so i implemented the first one only.
+// In the second solution, I am checking if the next move has any zero value 
+// which the first player can transition to so that opponent loses, 
+// but dont know why it fails or my implementation has something wrong with it.
 
 #include <bits/stdc++.h>
 using namespace std;
