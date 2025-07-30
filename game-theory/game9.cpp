@@ -2,7 +2,7 @@
 
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers-3/problem
 
-// Unbounded Normal Nim Game
+// Unbounded Normal Nim Game, Exploring State Transition
 
 // Calculate grundy for all piles and check if nim sum is zero or non-zero
 // First, I tried for implementing the second solution but it failed so i implemented the first one only.
