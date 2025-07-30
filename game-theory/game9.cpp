@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers-3/problem
 
+// Calculate grundy for all piles and check if nim sum is zero or non-zero
+
 #include <bits/stdc++.h>
 using namespace std;
 static constexpr int MAXN = 1e5 + 2;
