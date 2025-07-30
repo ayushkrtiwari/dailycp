@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers-3/problem
 
+// Unbounded Normal Nim Game
+
 // Calculate grundy for all piles and check if nim sum is zero or non-zero
 // First, I tried for implementing the second solution but it failed so i implemented the first one only.
 // In the second solution, I am checking if the next move has any zero value 
