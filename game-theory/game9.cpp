@@ -102,6 +102,22 @@ int winpossible(int n, int xorall, vector<int> &h)
     for(auto &x:h)
     {
         xorall ^= grundy[x];
+        // These below commented lines are what my thought process gone wrong at start
+
+        // set<int> mex;
+        // // now find whether we can make this xorall by any step in one turn
+        // for(int j = 2; j * j <= x; j++)
+        // {
+        //     if(x % j) continue;
+        //     int div1 = j, div2 = x/j;
+        //     if(div1 % 2 and div2 % 2)
+        //     mex.insert(grundy[div1]), mex.insert(grundy[div2]);
+        //     else if(div1 % 2) mex.insert(grundy[div2]);
+        //     else if(div2 % 2) mex.insert(grundy[div1]);
+        //     else mex.insert(0);
+        // }
+        // if(x % 2) mex.insert(1);
+        // int xrr = findmex(mex);
         for(int j = 2; j * j <= x; j++)
         {
             if(x % j) continue;
