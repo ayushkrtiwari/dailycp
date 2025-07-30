@@ -8,6 +8,12 @@
 // The logic for second is right since for any pile of non-zero grundy
 // will transition to pile with 0 SG value in an optimal play.
 
+// Now I got it !
+// The second solution approach is wrong where I am trying to make P-position for opponent's move
+// but there is a case : If there are both winning and losing states I can transition to on my current state,
+// this means that I will surely transition to losing state so that my opposition is on it, and hence
+// I am currently at winning state.
+
 #include <bits/stdc++.h>
 using namespace std;
 static constexpr int MAXN = 1e5 + 2;
