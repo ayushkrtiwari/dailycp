@@ -1,6 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/tower-breakers-3/problem
 
 // Calculate grundy for all piles and check if nim sum is zero or non-zero
+// First, I tried for implementing the second solution but it failed so i implemented the first one only.
 
 #include <bits/stdc++.h>
 using namespace std;
