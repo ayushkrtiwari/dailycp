@@ -13,6 +13,10 @@
 // but there is a case : If there are both winning and losing states I can transition to on my current state,
 // this means that I will surely transition to losing state so that my opposition is on it, and hence
 // I am currently at winning state.
+// But in my second solution where I am transitioning to losing state or finding next losing state,
+// I am checking the stated condition which is atlast wrong, since I can't say that a state is losing state
+// if it can transition to one of the winning states, rather we must ensure that every next state is winning
+// state for current state to be losing 
 
 #include <bits/stdc++.h>
 using namespace std;
