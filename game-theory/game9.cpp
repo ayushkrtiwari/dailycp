@@ -5,6 +5,8 @@
 // In the second solution, I am checking if the next move has any zero value 
 // which the first player can transition to so that opponent loses, 
 // but dont know why it fails or my implementation has something wrong with it.
+// The logic for second is right since for any pile of non-zero grundy
+// will transition to pile with 0 SG value in an optimal play.
 
 #include <bits/stdc++.h>
 using namespace std;
