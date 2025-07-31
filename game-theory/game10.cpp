@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/a-chessboard-game
 
+// Bounded Nim Sum Game, Pattern Identification
+
 // take grundy values of all coins and nim sum them, first wins if its non-zero else second.
 // Just the precomputation part has tweak that you need to traverse board 
 // as i + j == constant for calculating grundy values of each cell.
