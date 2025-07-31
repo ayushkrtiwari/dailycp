@@ -1,6 +1,9 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/a-chessboard-game
 
 // take grundy values of all coins and nim sum them, first wins if its non-zero else second.
+// Just the precomputation part has tweak that you need to traverse board 
+// as i + j == constant for calculating grundy values of each cell.
+// This is to assure that you get the precalculated grundy when you access a cell.
 
 #include <bits/stdc++.h>
 using namespace std;
