@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/a-chessboard-game
 
+// take grundy values of all coins and nim sum them, first wins if its non-zero else second.
+
 #include <bits/stdc++.h>
 using namespace std;
 static constexpr int M = 15;
