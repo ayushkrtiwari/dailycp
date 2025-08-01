@@ -1,5 +1,9 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/digits-square-board/problem
 
+// This code has high function overhead
+// Use static or global board and grundy arrays and reset it every test case.
+// C style arrays has less overhead than vectors
+
 #include <bits/stdc++.h>
 using namespace std;
 
