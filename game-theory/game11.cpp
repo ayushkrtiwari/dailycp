@@ -8,6 +8,12 @@
 // Your compiler‐errors and runtime traps are all coming from trying to treat C‑style VLAs of arbitrary rank 
 // as first‐class parameters, plus a few off‐by‐one/initialization slip‑ups. 
 // int precompute(int grundy[31][31][31][31], vector<vector<int>> &board, int sr,int sc,int tr,int tc)
+// You can’t write this and then pass grundy as you did. C++ does not support runtime‐sized arrays
+//  or VLAs in function parameters. Even though you declared int grundy[31][31][31][31]; 
+// in main, you cannot have the function signature accept int[][31][31][31] without specifying all 
+// but the first dimension at compile time (and all at once).
+
+
 
 #include <bits/stdc++.h>
 using namespace std;
