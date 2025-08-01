@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/digits-square-board/problem
 
 // Bounded Normal Nim Game, Brute Force, Sprague Grundy, Explore all states
