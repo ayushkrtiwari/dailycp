@@ -27,6 +27,8 @@ int precompute(int grundy[31][31][31][31], vector<vector<int>> &board, int sr, i
     if(allprime(board, sr, sc, tr, tc)) return grundy[sr][sc][tr][tc] = 0;
     if(sr == tr and sc == tc) return grundy[sr][sc][tr][tc] = 0; // this must be composite no but no further moves in single cell
     set<int> mex;
+    // from (x, y, x', y') we can transition to 4 states with each state having two partitions
+    // let there be a cell at (m, n) and we partition w.r.t that cell all valid edges
     for(int i = sr + 1; i <= tr; i++) mex.insert(precompute(grundy, board, sr, sc, i - 1, tc) ^ precompute(grundy, board, i, sc, tr, tc));
     for(int j = sc + 1; j <= tc; j++) mex.insert(precompute(grundy, board, sr, sc, tr, j - 1) ^ precompute(grundy, board, sr, j, tr, tc));
     return grundy[sr][sc][tr][tc] = findmex(mex);
