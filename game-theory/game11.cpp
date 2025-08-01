@@ -59,3 +59,89 @@ int main() {
     }
     return 0;
 }
+
+// ______________________________________________________________________________________________
+
+// Editorial Code
+
+#include<iostream>
+#include<stdio.h>
+#include<algorithm>
+#include<vector>
+#include<cmath>
+
+using namespace std;
+
+const int M=60;
+
+int a[M][M],gr[M][M][M][M];
+int n,t;
+
+int prime_check(int x, int y, int z,  int m)
+{
+    for (int i=x;i<=z;i++)
+    for (int j=y;j<=m;j++)
+    if (a[i][j]==1 || a[i][j]==4 || a[i][j]==6 || a[i][j]==8 || a[i][j]==9) return 0;
+
+    return 1;
+}
+
+int grundy(int x, int y, int z,int m)
+{
+    int v[75];
+
+    if (gr[x][y][z][m]!=-1) return gr[x][y][z][m];
+    if (prime_check(x,y,z,m))
+    {
+        gr[x][y][z][m]=0;
+        return 0;
+    }
+
+    for (int i=0;i<75;i++)
+    v[i]=0;
+
+    for (int i=x+1;i<=z;i++) v[grundy(x,y,i-1,m)^grundy(i,y,z,m)]=1;
+    for (int i=y+1;i<=m;i++) v[grundy(x,y,z,i-1)^grundy(x,i,z,m)]=1;
+
+
+    for (int i=0;i<75;i++)
+        if (v[i]==0)
+        {
+            gr[x][y][z][m]=i;
+            return gr[x][y][z][m];
+        }
+        return -1;
+}
+
+void solve()
+{
+    scanf("%d",&n);
+
+    for (int i=1;i<=n;i++)
+    for (int j=1;j<=n;j++)
+    scanf("%d",&a[i][j]);
+
+
+    for (int i=1;i<=n;i++)
+        for (int j=1;j<=n;j++)
+            for (int k=1;k<=n;k++)
+            for (int l=1;l<=n;l++)
+                gr[i][j][k][l]=-1;
+
+    grundy(1,1,n,n);
+
+    if (gr[1][1][n][n]!=0) printf("First\n"); else printf("Second\n");
+
+    return;
+
+}
+
+int main()
+{
+    scanf("%d",&t);
+
+    while(t--)
+        solve();
+
+    return 0;
+}
