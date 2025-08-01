@@ -25,7 +25,7 @@ int precompute(int grundy[31][31][31][31], vector<vector<int>> &board, int sr, i
 {
     if(grundy[sr][sc][tr][tc] != -1) return grundy[sr][sc][tr][tc];
     if(allprime(board, sr, sc, tr, tc)) return grundy[sr][sc][tr][tc] = 0;
-    if(sr == tr and sc == tc) return grundy[sr][sc][tr][tc] = 0; 
+    if(sr == tr and sc == tc) return grundy[sr][sc][tr][tc] = 0; // this must be composite no but no further moves in single cell
     set<int> mex;
     for(int i = sr + 1; i <= tr; i++) mex.insert(precompute(grundy, board, sr, sc, i - 1, tc) ^ precompute(grundy, board, i, sc, tr, tc));
     for(int j = sc + 1; j <= tc; j++) mex.insert(precompute(grundy, board, sr, sc, tr, j - 1) ^ precompute(grundy, board, sr, j, tr, tc));
