@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/digits-square-board/problem
 
+// Bounded Normal Nim Game, Brute Force, Sprague Grundy, Explore all states
+
 // This code has high function overhead
 // Use static or global board and grundy arrays and reset it every test case.
 // C style arrays has less overhead than vectors
@@ -12,8 +14,6 @@
 //  or VLAs in function parameters. Even though you declared int grundy[31][31][31][31]; 
 // in main, you cannot have the function signature accept int[][31][31][31] without specifying all 
 // but the first dimension at compile time (and all at once).
-
-
 
 #include <bits/stdc++.h>
 using namespace std;
