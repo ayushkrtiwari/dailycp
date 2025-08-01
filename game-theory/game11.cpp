@@ -29,6 +29,11 @@ int precompute(int grundy[31][31][31][31], vector<vector<int>> &board, int sr, i
     set<int> mex;
     // from (x, y, x', y') we can transition to 4 states with each state having two partitions
     // let there be a cell at (m, n) and we partition w.r.t that cell all valid edges
+    // (x, y, x', n - 1)  (x, n, x', y')       vertical line partition left edge
+    // (x, y, x', n)      (x, n + 1, x', y')   vertical line partition right edge
+    // (x, y, m - 1, y')  (m, y, x', y')       horizontal line partition upper edge
+    // (x, y, m, y')      (m + 1, y, x', y')   horizontal line partition lower edge
+    // the left, right and upper, lower edge partition mex produces same value, hence there are only 2 insertions instead of 4.
     for(int i = sr + 1; i <= tr; i++) mex.insert(precompute(grundy, board, sr, sc, i - 1, tc) ^ precompute(grundy, board, i, sc, tr, tc));
     for(int j = sc + 1; j <= tc; j++) mex.insert(precompute(grundy, board, sr, sc, tr, j - 1) ^ precompute(grundy, board, sr, j, tr, tc));
     return grundy[sr][sc][tr][tc] = findmex(mex);
