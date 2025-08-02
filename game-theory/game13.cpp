@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/powers-of-two-game
 
+// Maths, Periodicity
+
 // 2^x (mod 17) is periodic at cycle length of 8.
 // Also pairs are formed for sum of 17 in this cycle for every x
 // Refer Editorial
