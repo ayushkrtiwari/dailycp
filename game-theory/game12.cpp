@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/fun-game
 
+// Greedy, Game Theory
+
 // Simple Greedy Approach, as take a scenario, (A1, B1) (A2, B2)
 // If P1 takes A1, then P2 takes B2, or if P1 takes A2, P2 takes B1
 // For P1 to win, it needs to have the winning move. 
