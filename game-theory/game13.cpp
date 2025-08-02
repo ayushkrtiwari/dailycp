@@ -4,6 +4,10 @@
 // Also pairs are formed for sum of 17 in this cycle for every x
 // Refer Editorial
 
+// Standard cin/cout with their default settings can be very slow on large I/O (especially if t is in the millions).
+// By default C++ iostreams are synchronized with C’s stdio and untied, which adds a ton of overhead.
+// The fix is just to turn off the sync and untie the streams, and to avoid any accidental flushing
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
