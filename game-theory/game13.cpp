@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/powers-of-two-game
 
+// 2^x (mod 17) is periodic at cycle length of 8.
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
