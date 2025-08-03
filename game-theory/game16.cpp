@@ -3,6 +3,8 @@
 // Few tricks : optimal approach is to break into 2 parts: d and H - d for pile of H
 // Now f(H) = min(max(d^2 + f(h(d))), max((H - d)^2 + f(h(H - d))))
 // here h(x) is height at position x after breaking into several parts
+// max is done over all values of d, min is done for minimum of both values recursively.
+// max is done by P2, min is done by P1.
 
 #include<bits/stdc++.h>
 using namespace std;
