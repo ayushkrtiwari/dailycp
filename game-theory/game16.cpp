@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/final-tower-breakers/problem
 
+// DP, Sprague-Grundy, Game Theory
+
 // Nice Question, DP more than actual game-theory
 // Refer to editorial
 
