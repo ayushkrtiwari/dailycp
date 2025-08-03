@@ -1,5 +1,10 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/deforestation/problem
 
+// For branches you take nim sum(xor) of all branches and replace them with one branch of that length
+// For rest, just take the length of the branch as nim sum.
+
+// Refer Resources section for concept
+
 #include <bits/stdc++.h>
 using namespace std;
 
