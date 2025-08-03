@@ -1,5 +1,7 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/final-tower-breakers/problem
 
+// Few tricks : optimal approach is to break into 2 parts: d and H - d for pile of H
+
 #include<bits/stdc++.h>
 using namespace std;
 # define int long long
