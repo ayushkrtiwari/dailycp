@@ -1,5 +1,8 @@
 // https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/final-tower-breakers/problem
 
+// Nice Question, DP more than actual game-theory
+// Refer to editorial
+
 // Few tricks : optimal approach is to break into 2 parts: d and H - d for pile of H
 // Now f(H) = min(max(d^2 + f(h(d))), max((H - d)^2 + f(h(H - d))))
 // here h(x) is height at position x after breaking into several parts
