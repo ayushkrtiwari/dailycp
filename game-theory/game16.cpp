@@ -5,6 +5,9 @@
 // here h(x) is height at position x after breaking into several parts
 // max is done over all values of d, min is done for minimum of both values recursively.
 // max is done by P2, min is done by P1.
+// d will be in the range [1, root(H)] where H represents the height of pile to be broken.
+// root(H) is the upper limit since > root(H) means P2 gets instantly more than (root(H))^2 coins or H coins
+// but at any case there is a way that P1 can arrange that P2 gets atmost H coins.
 
 #include<bits/stdc++.h>
 using namespace std;
