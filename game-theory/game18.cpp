@@ -1,5 +1,7 @@
 // https://cses.fi/problemset/task/1098
 
+// Grundy value of each pile : x % 4
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
