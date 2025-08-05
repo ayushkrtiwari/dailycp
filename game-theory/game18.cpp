@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://cses.fi/problemset/task/1098
 
 // Bounded Normal Nim Game
