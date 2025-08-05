@@ -1,5 +1,7 @@
 // https://cses.fi/problemset/task/1730
 
+// Unbounded Normal Nim Game
+
 // nim sum of all piles gives first player as winner when nim sum != 0 else second
 
 #include<bits/stdc++.h>
