@@ -1,6 +1,7 @@
 // https://cses.fi/problemset/task/1098
 
 // Grundy value of each pile : x % 4
+// nim sum of grundy values of all piles gives first player as winner if nim != 0 else second
 
 #include<bits/stdc++.h>
 using namespace std;
