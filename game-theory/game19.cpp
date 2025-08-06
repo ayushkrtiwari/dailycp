@@ -1,5 +1,9 @@
 // https://cses.fi/problemset/task/1099
 
+// In 1-indexed
+// On odd positions, any no of ball you bring to lower position, the move will be copied by same amount of balls by opponent
+// Thus only even positions account for grundy values
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
