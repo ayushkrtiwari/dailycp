@@ -1,5 +1,7 @@
 // https://cses.fi/problemset/task/1729
 
+// Just a bounded normal nim case, with exploring each possible transitions
+
 #include<bits/stdc++.h>
 using namespace std;
 
