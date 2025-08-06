@@ -1,5 +1,7 @@
 // https://cses.fi/problemset/task/1729
 
+// Bounded Normal Nim Game, Brute Force, Exploring all paths
+
 // Just a bounded normal nim case, with exploring each possible transitions
 // If there are both win and lose transition, then player moves to losing state for opponent
 // Thus player wants to make current move a N-position by transitioning to a P-position for opponent
