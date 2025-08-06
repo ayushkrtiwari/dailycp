@@ -3,6 +3,8 @@
 // In 1-indexed
 // On odd positions, any no of ball you bring to lower position, the move will be copied by same amount of balls by opponent
 // Thus only even positions account for grundy values
+// SG value of a stair is the no of balls on it, since it acts as a stone pile
+// Thus taking nim sum gives the winner in optimal play
 
 #include<bits/stdc++.h>
 using namespace std;
