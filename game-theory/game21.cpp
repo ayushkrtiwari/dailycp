@@ -7,6 +7,10 @@
 // to remove from (removing from the same subset), restoring all heaps back to even. 
 // Eventually you’ll face the all-zero position and lose.
 
+// If there is at least one odd heap, you can on your first move remove one coin
+// from exactly that odd heap (or any odd number of odd heaps), making all heaps even. 
+// You hand your opponent an all-even position, which as we just saw is losing—so you win.
+
 #include<bits/stdc++.h>
 using namespace std;
 
