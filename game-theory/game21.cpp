@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://cses.fi/problemset/task/2208
 
 // Unbounded Normal Nim Game, Mutiple Pile Removal Simultaneously CSES
