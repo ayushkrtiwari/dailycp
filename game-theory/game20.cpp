@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://cses.fi/problemset/task/1729
 
 // Bounded Normal Nim Game, Brute Force, Exploring all paths
