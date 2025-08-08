@@ -37,6 +37,9 @@ int main() {
 
 // ____________________________________________________________________________________________
 
+// A/GPT : 'Knuth Algorithm H'
+// this implementation will not give permutation of the possible arrays
+
 #include <bits/stdc++.h>
 using namespace std;
 
