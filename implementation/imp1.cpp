@@ -4,6 +4,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// rem = how much sum remains to reach x
+// cur = the current partial composition
 void dfs(int rem, vector<int>& cur) {
     if (rem == 0) {
         // we've hit the target sum, print this composition
