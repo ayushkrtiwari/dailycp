@@ -5,6 +5,7 @@
 
 // Implementation by GPT : 
 // this implementation will give all permutations of the possible arrays.
+// 3 -> {3}, {1, 2}, {2, 1}, {1, 1, 1}
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -44,6 +45,7 @@ int main() {
 
 // A/GPT : 'Knuth Algorithm H'
 // this implementation will not give permutation of the possible arrays
+// eg. 3 -> {1, 1, 1}, {2, 1}, {3}
 
 #include <bits/stdc++.h>
 using namespace std;
