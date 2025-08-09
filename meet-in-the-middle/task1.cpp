@@ -1,5 +1,7 @@
 // https://lightoj.com/problem/funny-knapsack
 
+// Meet-in-the-middle, Binary Search, Bitmasking, Implementation
+
 // You need all the weights combination such that total weight <= W
 // You can brute force but it results in TLE : since 2 ^ 30 = 10 ^ 9 > 10 ^ 8
 // But we see that we can divide array into two parts from mid
