@@ -1,6 +1,7 @@
 // https://lightoj.com/problem/funny-knapsack
 
 // You need all the weights combination such that total weight <= W
+// You can brute force but it results in TLE : since 2 ^ 30 = 10 ^ 9 > 10 ^ 8
 
 #include <bits/stdc++.h>
 using namespace std;
