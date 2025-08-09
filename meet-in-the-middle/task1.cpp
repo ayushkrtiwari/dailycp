@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://lightoj.com/problem/funny-knapsack
 
 // Meet-in-the-middle, Binary Search, Bitmasking, Implementation
