@@ -3,7 +3,12 @@
 // You need all the weights combination such that total weight <= W
 // You can brute force but it results in TLE : since 2 ^ 30 = 10 ^ 9 > 10 ^ 8
 // But we see that we can divide array into two parts from mid
-// Generate all sum combinations for both array
+// Generate all sum combinations for both array 
+// Sort the second sum array
+// Now for each combination of sum from first array, 
+// binary search for sum from second array such that sum of both is <= W
+// Store all the possible sum values as : lowerbound(arrsum2.begin,arrsum2.end, W - arrsum1[i]) 
+// for each element arrsum1[i] in first sum array
 
 #include <bits/stdc++.h>
 using namespace std;
