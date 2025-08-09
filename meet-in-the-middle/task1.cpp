@@ -1,5 +1,7 @@
 // https://lightoj.com/problem/funny-knapsack
 
+// You need all the weights combination such that total weight <= W
+
 #include <bits/stdc++.h>
 using namespace std;
 # define int long long
