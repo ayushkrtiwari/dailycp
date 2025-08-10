@@ -1,6 +1,7 @@
 // https://codeforces.com/group/DeilFl9Bhi/contest/329185/problem/A
 
 // Count number of points lying on both sides of Y-axis
+// If any count is <= 1, solution possible else not
 
 #include<bits/stdc++.h>
 using namespace std;
