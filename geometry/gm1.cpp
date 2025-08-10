@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://codeforces.com/group/DeilFl9Bhi/contest/329185/problem/A
 
 // Basic Geometry
