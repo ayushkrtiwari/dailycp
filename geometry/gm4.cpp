@@ -1,5 +1,8 @@
 // https://codeforces.com/problemset/problem/712/C
 
+// x > y, Going from x to y wont give better path
+// But going from y to x would give better path
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
