@@ -3,6 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// this was for finding any pair of possible sides for non-degenerate triangle
 // void solve()
 // {
 //     size_t n;
