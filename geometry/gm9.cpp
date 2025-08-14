@@ -7,6 +7,71 @@ void solve()
 {
     int n, m;
     cin>>n>>m;
+    // vector<vector<char>> v(n, vector<char>(m));
+    // for(auto &x : v)
+    // for(auto &y : x)
+    // cin>>y;
+    // int rowdis, coldis;
+    // vector<int> countrow(n, 0);
+    
+    // for(int i = 0; i < n; i++)
+    // for(int j = 0; j < m; j++)
+    // if(v[i][j] == '*') countrow[i]++;
+    
+    // for(int i = 0; i < n; i++)
+    // {
+    //     if(countrow[i] == 2)
+    //     {
+    //         for(int j = 0; j < m; j++)
+    //         if(v[i][j] == '*')
+    //         {
+    //             for(int k = j + 1; k < m; k++)
+    //             {
+    //                 if(v[i][k] == '*')
+    //                 {
+    //                     rowdis = k - j;
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    
+    // vector<int> countcol(m, 0);
+    
+    // for(int i = 0; i < m; i++)
+    // for(int j = 0; j < n; j++)
+    // if(v[i][j] == '*') countcol[i]++;
+    
+    // vector<vector<char>> transpose(m, vector<char>(n));
+    // for(int i = 0; i < m; i++)
+    // for(int j = 0; j < n; j++)
+    //     transpose[i][j] = v[j][i];
+
+    // for(int i = 0; i < m; i++)
+    // {
+    //     if(countcol[i] == 2)
+    //     {
+    //         for(int j = 0; j < n; j++)
+    //         if(v[i][j] == '*')
+    //         {
+    //             for(int k = j + 1; k < n; k++)
+    //             {
+    //                 if(v[i][k] == '*')
+    //                 {
+    //                     coldis = k - j;
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    
+    // for(int i = 0; i < n; i++)
+    // {
+        
+    // }
+    
     vector<pair<int,int>> xy(3);
     int cnt = 0;
     int x, y;
