@@ -1,5 +1,8 @@
 // https://cses.fi/problemset/task/2189
 
+
+// Cross Product classification to +ve, -ve, 0 gives point position direction
+
 #include<bits/stdc++.h>
 using namespace std;
 # define int long long
