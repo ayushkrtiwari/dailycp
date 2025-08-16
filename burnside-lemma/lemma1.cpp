@@ -1,5 +1,6 @@
 // https://cses.fi/problemset/task/2210
 
+// Solution: 1 axis of rotation, symmetry rotation angles : 0, 90, 180, 270
 #include<bits/stdc++.h>
 using namespace std;
 # define int long long
