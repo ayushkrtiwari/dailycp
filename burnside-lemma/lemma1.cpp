@@ -7,6 +7,9 @@
 // angle 180 : (n & 1) ? ceil((n^2) / 2) : (n^2)/2 groups
 // The result is summation of no of groups for all angles and divide it by no of symmetric angles (4)
 
+// Lets say you want to do 2^x % MOD, but x is large, means you will also do (2^(x % MOD)) % MOD 
+// But this is wrong, since the exponent should be modulo by (MOD - 1) not MOD
+// Hence, the right power is (2^(x % (MOD - 1))) % MOD ; in this problem x = n^2, (n^2)/2, (n^2)/4
 
 #include<bits/stdc++.h>
 using namespace std;
