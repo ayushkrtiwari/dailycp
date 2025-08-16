@@ -1,6 +1,11 @@
 // https://cses.fi/problemset/task/2210
 
 // Solution: 1 axis of rotation, symmetry rotation angles : 0, 90, 180, 270
+// Evaluating each case for this problem of square : 
+// angle 0 : n^2 groups
+// angle 90, 270 : (n & 1) ? ceil((n^2) / 4) : (n^2)/4 groups
+// angle 180 : (n & 1) ? ceil((n^2) / 2) : (n^2)/2 groups
+
 #include<bits/stdc++.h>
 using namespace std;
 # define int long long
