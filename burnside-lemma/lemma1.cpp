@@ -1,5 +1,7 @@
 // https://cses.fi/problemset/task/2210
 
+// For concept of this problem, refer Resources
+
 // Solution: 1 axis of rotation, symmetry rotation angles : 0, 90, 180, 270
 // Evaluating each case for this problem of square : 
 // angle 0 : n^2 groups
