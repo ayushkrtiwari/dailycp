@@ -1,5 +1,7 @@
 // https://cses.fi/problemset/task/2210
 
+// Burnside Lemma, Binary Exponentiation, Fermat Theorem, int128, Modular Arithmetic
+
 // For concept of this problem, refer Resources
 
 // Solution: 1 axis of rotation, symmetry rotation angles : 0, 90, 180, 270
