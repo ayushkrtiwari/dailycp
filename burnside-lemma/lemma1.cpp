@@ -31,6 +31,9 @@ int32_t main()
     int n;
     cin>>n;
     __int128 nsq = (n * n);
+    // not done modulo here since I want the value of (n^2)/4 but 
+    // if I do modulo and then /4 then I would get wrong value since both are not equivalent
+    // hence int128 has been used for the purpose of not distorting real value of n^2
     __int128 nsqby2 = nsq / 2;
     __int128 nsqby4 = nsq / 4;
     int pow2n2 = binpower(2, nsq);
