@@ -5,6 +5,8 @@
 // angle 0 : n^2 groups
 // angle 90, 270 : (n & 1) ? ceil((n^2) / 4) : (n^2)/4 groups
 // angle 180 : (n & 1) ? ceil((n^2) / 2) : (n^2)/2 groups
+// The result is summation of no of groups for all angles and divide it by no of symmetric angles (4)
+
 
 #include<bits/stdc++.h>
 using namespace std;
