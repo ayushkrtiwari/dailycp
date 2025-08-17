@@ -1,5 +1,6 @@
 // https://cses.fi/problemset/task/2209
 
+// Jumping from a certain point for every number covers bead at specific positions, collectively called groups
 #include<bits/stdc++.h>
 using namespace std;
 # define int long long
