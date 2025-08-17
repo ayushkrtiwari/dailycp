@@ -4,6 +4,7 @@
 // No of groups = gcd(jump, necklace_size)
 // This comes from simple equation : x + A * jump - B * necklace_size, x is starting position
 // This means we actual cover all beads with an effective jump of gcd(jump, necklace_size)
+// This also means there are above stated no of groups for those jump sizes.
 
 #include<bits/stdc++.h>
 using namespace std;
