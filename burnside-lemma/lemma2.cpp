@@ -2,6 +2,7 @@
 
 // Jumping from a certain point for every number covers bead at specific positions, collectively called groups
 // No of groups = gcd(jump, necklace_size)
+// This comes from simple equation : x + A * jump - B * necklace_size, x is starting position
 
 #include<bits/stdc++.h>
 using namespace std;
