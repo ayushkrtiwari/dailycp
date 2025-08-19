@@ -1,7 +1,7 @@
 // https://codeforces.com/problemset/problem/166/B
 
 // For knowing one polygon to be inside other polygon
-
+// We need to check whether every points of inner polygon lie inside outer polygon
 #include<bits/stdc++.h>
 using namespace std;
 define int long long
