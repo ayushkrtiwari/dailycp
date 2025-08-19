@@ -499,3 +499,48 @@ auto onSegment(const Point<T> &P1, const Point<T> &P2, const Point<T> &Q) -> dec
     if(min(P1.x, P2.x) <= Q.x and max(P1.x, P2.x) >= Q.x and min(P1.y, P2.y) <= Q.y and max(P1.y, P2.y) >= Q.y) return true;
     return false;
 }
+
+int32_t main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        Point<int> p1, p2, p3, p4;
+        cin>>p1.x>>p1.y>>p2.x>>p2.y>>p3.x>>p3.y>>p4.x>>p4.y;
+        int a1 = (p2 - p1) ^ (p3 - p1); // p3 direction to p1p2
+        int a2 = (p2 - p1) ^ (p4 - p1); // p4 direction to p1p2
+        int a3 = (p2 - p3) ^ (p4 - p3); // p2 direction to p3p4
+        int a4 = (p1 - p3) ^ (p4 - p3); // p1 direction to p3p4
+        bool intersect = false;
+        if(((a1 > 0 and a2 < 0) or (a1 < 0 and a2 > 0)) and ((a3 > 0 and a4 < 0) or (a3 < 0 and a4 > 0)))
+        intersect = true;
+        else if(a1 == 0 and onSegment(p1, p2, p3)) intersect = true;
+        else if(a2 == 0 and onSegment<int>(p1, p2, p4)) intersect = true;
+        else if(a3 == 0 and onSegment<int>(p3, p4, p2)) intersect = true;
+        else if(a4 == 0 and onSegment<int>(p3, p4, p1)) intersect = true;
+        else intersect = false;
+        if(intersect) cout<<"YES\n";
+        else cout<<"NO\n";
+    }
+}
+
+// _________________________________________________________________________
+
+// Using template directly
+
+int32_t main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        Point<int> p1, p2, p3, p4;
+        cin>>p1.x>>p1.y>>p2.x>>p2.y>>p3.x>>p3.y>>p4.x>>p4.y;
+        Line<int> l1(p1, p2), l2(p3, p4);
+        Line<int> dummy;
+        if(intersectSegments(l1, l2, dummy))
+        cout<<"YES\n";
+        else cout<<"NO\n";
+    }
+}
