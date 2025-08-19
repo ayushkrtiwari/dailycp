@@ -3,6 +3,7 @@
 // For knowing one polygon to be inside other polygon
 // We need to check whether every points of inner polygon lie inside outer polygon
 // For a point to lie inside a convex polygon, we need to check whether the points lies on <= 180 side.
+// Checking every point this way gives O(n * m) resulting in TLE.
 
 
 #include<bits/stdc++.h>
