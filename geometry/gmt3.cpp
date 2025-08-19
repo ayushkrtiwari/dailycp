@@ -2,6 +2,9 @@
 
 // For knowing one polygon to be inside other polygon
 // We need to check whether every points of inner polygon lie inside outer polygon
+// For a point to lie inside a convex polygon, we need to check whether the points lies on <= 180 side.
+
+
 #include<bits/stdc++.h>
 using namespace std;
 define int long long
