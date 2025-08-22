@@ -1,5 +1,7 @@
 // https://open.kattis.com/problems/robotprotection
 
+// Convex Hull, Area of Polygon
+
 // Robot covers the area formed by the convex hull of the polygon
 // Hence, convex hull area of the polygon is the solution
 
