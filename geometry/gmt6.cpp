@@ -1,5 +1,7 @@
 // https://open.kattis.com/problems/robotprotection
 
+// Robot covers the area formed by the convex hull of the polygon
+
 #include<bits/stdc++.h>
 using namespace std;
 
