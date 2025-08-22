@@ -1,3 +1,5 @@
+// जय श्री राम  JAI SHREE RAM
+
 // https://open.kattis.com/problems/robotprotection
 
 // Convex Hull, Area of Polygon
