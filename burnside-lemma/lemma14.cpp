@@ -1,6 +1,8 @@
 // https://codeforces.com/gym/101873/attachments/download/7413/20172018-acmicpc-german-collegiate-programming-contest-gcpc-2017-en.pdf
 // https://basecamp.eolymp.com/en/problems/11615
 
+// Solution : 
+// c ^ (gcd(i, m) * (n * n))    for all i from 0 to m - 1
 #include <bits/stdc++.h>
 using namespace std;
 static constexpr int MOD = 1e9 + 7;
