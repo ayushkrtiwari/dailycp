@@ -5,6 +5,7 @@
 // c ^ (gcd(i, m) * (n * n))    for all i from 0 to m - 1
 // store this sum for all values of i in a variable and divide it by m
 // This is the final solution. 
+// Remember to handle the arithmetic modulo and arithmetic division by multiplying with den ^ (MOD - 2) instead of dividing den
 
 #include <bits/stdc++.h>
 using namespace std;
