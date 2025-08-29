@@ -1,5 +1,7 @@
 // https://codeforces.com/contest/600/problem/E
 
+// when we get to a node, we find bigchild of that node
+
 
 #include <bits/stdc++.h>
 using namespace std;
