@@ -3,6 +3,7 @@
 // when we get to a node, we find bigchild of that node
 // then we do dfs on all small child without updating info
 // then we do dfs on bigchild updating info
+// then we do dfs on all small child updating info
 
 #include <bits/stdc++.h>
 using namespace std;
