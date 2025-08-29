@@ -4,6 +4,7 @@
 // then we do dfs on all small child without updating info
 // then we do dfs on bigchild updating info
 // then we do dfs on all small child updating info
+// then we clear out info for all subtree nodes, including node itself, bigchild and all small childs
 
 #include <bits/stdc++.h>
 using namespace std;
