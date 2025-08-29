@@ -1,7 +1,7 @@
 // https://codeforces.com/contest/600/problem/E
 
 // when we get to a node, we find bigchild of that node
-
+// then we do dfs on all small child without updating info
 
 #include <bits/stdc++.h>
 using namespace std;
