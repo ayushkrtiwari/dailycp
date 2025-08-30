@@ -6,6 +6,7 @@
 // then we do dfs on all small child updating info
 // then we clear out info for all subtree nodes, including node itself, bigchild and all small childs
 
+// Let say the light edges are dfs, thus they will merge to parent of size >= 2 * its size (due to 1 heavy node present)
 #include <bits/stdc++.h>
 using namespace std;
 # define int long long
