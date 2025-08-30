@@ -12,6 +12,7 @@
 // Now, we want to know how many times does light nodes contribute to complexity or say cnt
 // So, we know that light edge can have only log2(n) parents/ancestors,
 // hence only those log2(n) ancestors when have dfs, then only that node contributes to cnt
+// So 1 light node contributes log2(n) times, hence n(say) nodes contribute n log n times.
 
 #include <bits/stdc++.h>
 using namespace std;
