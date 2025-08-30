@@ -11,6 +11,8 @@
 // This means light nodes can be added upto at max log2(n) times.
 // Now, we want to know how many times does light nodes contribute to complexity or say cnt
 // So, we know that light edge can have only log2(n) parents/ancestors,
+// hence only those log2(n) ancestors when have dfs, then only that node contributes to cnt
+
 #include <bits/stdc++.h>
 using namespace std;
 # define int long long
