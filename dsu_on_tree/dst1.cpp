@@ -7,6 +7,7 @@
 // then we clear out info for all subtree nodes, including node itself, bigchild and all small childs
 
 // Let say the light edges are dfs, thus they will merge to parent of size >= 2 * its size (due to 1 heavy node present)
+// This 2 ^ (i - 1) min size for ith node. Hence n >= 2 ^ (i - 1) gives i <= log2(n) + 1. Take floor of log
 #include <bits/stdc++.h>
 using namespace std;
 # define int long long
