@@ -9,6 +9,8 @@
 // Let say the light edges are dfs, thus they will merge to parent of size >= 2 * its size (due to 1 heavy node present)
 // This 2 ^ (i - 1) min size for ith node. Hence n >= 2 ^ (i - 1) gives i <= log2(n) + 1. Take floor of log
 // This means light nodes can be added upto at max log2(n) times.
+// Now, we want to know how many times does light nodes contribute to complexity or say cnt
+// So, we know that light edge can have only log2(n) parents/ancestors,
 #include <bits/stdc++.h>
 using namespace std;
 # define int long long
