@@ -1,5 +1,7 @@
 // https://codeforces.com/contest/600/problem/E
 
+// small to large merge
+
 // when we get to a node, we find bigchild of that node
 // then we do dfs on all small child without updating info
 // then we do dfs on bigchild updating info
