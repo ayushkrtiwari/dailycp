@@ -15,6 +15,7 @@
 // So 1 light node contributes log2(n) times, hence n(say) nodes contribute n log n times.
 // For heavy nodes, each nodes add only constant time, since they are added only once and contribute only once to cnt
 // This way they have complexity of O(n) only.
+// Hence complexity : O(n + n log n) ~ O(n log n)
 
 #include <bits/stdc++.h>
 using namespace std;
