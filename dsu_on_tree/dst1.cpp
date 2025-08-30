@@ -1,3 +1,5 @@
+// जय श्री राम   JAI SHREE RAM
+
 // https://codeforces.com/contest/600/problem/E
 
 // small to large merge, heavy-light decomposition, dsu on tree
