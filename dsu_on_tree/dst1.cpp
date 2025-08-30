@@ -1,6 +1,6 @@
 // https://codeforces.com/contest/600/problem/E
 
-// small to large merge
+// small to large merge, heavy-light decomposition, dsu on tree
 
 // when we get to a node, we find bigchild of that node
 // then we do dfs on all small child without updating info
