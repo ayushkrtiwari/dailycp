@@ -82,13 +82,16 @@ int32_t main()
         cin>>v>>h;
         v--;
         // dbg();
-        if(h > mxdep or nodesdeph[h].empty())
+        if(h > mxdep or nodesdeph[h].empty()) // * empty vector is palindrome, 2nd condn is sufficient
         {
             cout<<"Yes\n";
             continue;
         }
         int start = lower_bound(nodesdeph[h].begin(), nodesdeph[h].end(), tin[v]) - nodesdeph[h].begin();
         int end = upper_bound(nodesdeph[h].begin(), nodesdeph[h].end(), tout[v] - 1) - nodesdeph[h].begin(); 
+        // tout for any node a/dfseuler algorithm : tout > tin not tout >= tin, 
+        // hence to find till last tin, we use upper bound on tout - 1
+        // dbg();
         int sxrid = (start == 0 ? 0 : prefxr[h][start - 1]);
         int exrid = prefxr[h][end - 1];
         int xrrange = exrid ^ sxrid;
