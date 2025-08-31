@@ -100,3 +100,65 @@ int32_t main()
         else cout<<"No\n";
     }
 }
+
+// __________________________________________________________________________________________________________
+
+// Arpa DSU by tree code :
+
+#include <bits/stdc++.h>
+#define pb push_back
+#define X first
+#define Y second
+//#define int long long
+using namespace std;
+template <class T, class L> bool smax(T &x,L y){  return x < y ? (x = y, 1) : 0;  }
+template <class T, class L> bool smin(T &x,L y){  return y < x ? (x = y, 1) : 0;  }
+typedef pair<int, int> pii;
+
+const int maxn = 5e5 + 17, z = 26;
+int n, cntf[maxn], sz[maxn], h[maxn];
+vector<int> g[maxn];
+vector<pii> ass[maxn];
+string s;
+bool big[maxn], cnt[maxn][z], ans[maxn];
+void getsz(int v){
+    sz[v] = 1;
+    for(auto u : g[v])
+	h[u] = h[v] + 1, getsz(u), sz[v] += sz[u];
+}
+void add(int v, int x){
+    cntf[ h[v] ] -= cnt[ h[v] ][ s[v] - 'a'];
+    cnt[ h[v] ][ s[v] - 'a'] ^= 1;
+    cntf[ h[v] ] += cnt[ h[v] ][ s[v] - 'a'];
+    for(auto u : g[v])
+	if(!big[u])
+	    add(u, x);
+}
+void dfs(int v, bool keep){
+    int mx = 0, b;
+    for(auto u : g[v])
+	if(smax(mx, sz[u]))
+	    b = u;
+    for(auto u : g[v])
+	if(u != b)  dfs(u, 0);
+    if(mx)  big[b] = 1, dfs(b, 1);
+    add(v, 1);
+    for(auto q : ass[v])
+	ans[q.Y] = cntf[q.X] <= 1;
+    if(mx)  big[b] = 0;
+    if(!keep)  add(v, -1);
+}
+main(){
+    ios::sync_with_stdio(0), cin.tie(0);
+    int m;  cin >> n >> m;
+    for(int i = 1, p; i < n; i++)
+	cin >> p, g[p - 1].pb(i);
+    getsz(0);
+    cin >> s;
+    for(int i = 0, v, h; i < m; i++)
+	cin >> v >> h, ass[v - 1].pb({h - 1, i});
+    dfs(0, 0);
+    for(int i = 0; i < m; i++)
+	cout << (ans[i] ? "Yes" : "No") << '\n';
+    return 0;
+}
