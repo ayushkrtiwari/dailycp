@@ -2,6 +2,7 @@
 
 // * : where i had mistaken
 // using long long instead of int gives TLE
+// not using fastio gives TLE
 
 #include<bits/stdc++.h>
 using namespace std;
