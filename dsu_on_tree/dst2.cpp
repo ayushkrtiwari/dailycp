@@ -22,7 +22,7 @@ void dfseuler(int node, int parent)
     sz[node] = 1;
     euler[timer] = node;
     tin[node] = timer++;
-    nodesdeph[depth[node]].emplace_back(tin[node]); 
+    nodesdeph[depth[node]].emplace_back(tin[node]); // tin is stored in increasing order, hence binary search feasible
     for(auto &nb : edges[node])
         if(nb != parent)
         {
@@ -92,7 +92,7 @@ int32_t main()
         int sxrid = (start == 0 ? 0 : prefxr[h][start - 1]);
         int exrid = prefxr[h][end - 1];
         int xrrange = exrid ^ sxrid;
-        if(start == end) cout<<"Yes\n"; 
+        if(start == end) cout<<"Yes\n"; // start > end is never possible since tin < tout, tin <= tout - 1
         else if(xrrange == 0 or ((xrrange & (xrrange - 1)) == 0)) cout<<"Yes\n"; // * brackets order matter
         else cout<<"No\n";
     }
