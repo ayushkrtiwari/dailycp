@@ -1,6 +1,7 @@
 // https://codeforces.com/contest/570/problem/D
 
 // * : where i had mistaken
+// using long long instead of int gives TLE
 
 #include<bits/stdc++.h>
 using namespace std;
