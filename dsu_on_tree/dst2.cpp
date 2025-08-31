@@ -1,5 +1,7 @@
 // https://codeforces.com/contest/570/problem/D
 
+// * : where i had mistaken
+
 #include<bits/stdc++.h>
 using namespace std;
 // # define int long long
