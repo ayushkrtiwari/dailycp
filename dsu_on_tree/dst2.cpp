@@ -11,6 +11,7 @@
 // Hence to optimise, we store all nodes at height h in nodesdeph[h] 2d vector
 // Now, we are upto finding all the nodes in subtree v with height h, hence we could use binary search
 // since we store tin values which are always stored/traversed in increasing order
+// Also for knowing subtree nodes of v we use tin[v] and tout[v] as lower bound and upper bound of subtree nodes timer.
 
 #include<bits/stdc++.h>
 using namespace std;
