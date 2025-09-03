@@ -13,6 +13,8 @@
 // since we store tin values which are always stored/traversed in increasing order
 // Also for knowing subtree nodes of v we use tin[v] and tout[v] as lower bound and upper bound of subtree nodes timer.
 // Hence we can know now if the letters could form palindrome
+// Now we get to optimise the part : check all odd occurrences of alphabets in the subtree
+
 #include<bits/stdc++.h>
 using namespace std;
 // # define int long long
