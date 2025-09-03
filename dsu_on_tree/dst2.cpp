@@ -9,6 +9,9 @@
 // take all nodes at depth(1-indexed) and check if they could form palindrome
 // for this we get TLE on naive approach by checking each subtree of v at height h
 // Hence to optimise, we store all nodes at height h in nodesdeph[h] 2d vector
+// Now, we are upto finding all the nodes in subtree v with height h, hence we could use binary search
+// since we store tin values which are always stored/traversed in increasing order
+
 #include<bits/stdc++.h>
 using namespace std;
 // # define int long long
