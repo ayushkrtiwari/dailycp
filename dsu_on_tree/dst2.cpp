@@ -5,7 +5,8 @@
 // not using fastio gives TLE
 
 // empty vector, even times character, only one odd character are palindromes
-
+// We need to get the query answer as : in subtree of node v(inclusive does not change solution, both are palindrome),
+// take all nodes at depth(1-indexed) and check if they could form palindrome
 #include<bits/stdc++.h>
 using namespace std;
 // # define int long long
