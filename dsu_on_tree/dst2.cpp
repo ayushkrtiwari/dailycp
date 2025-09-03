@@ -12,7 +12,7 @@
 // Now, we are upto finding all the nodes in subtree v with height h, hence we could use binary search
 // since we store tin values which are always stored/traversed in increasing order
 // Also for knowing subtree nodes of v we use tin[v] and tout[v] as lower bound and upper bound of subtree nodes timer.
-
+// Hence we can know now if the letters could form palindrome
 #include<bits/stdc++.h>
 using namespace std;
 // # define int long long
