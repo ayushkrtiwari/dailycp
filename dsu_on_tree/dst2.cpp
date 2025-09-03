@@ -4,6 +4,8 @@
 // using long long instead of int gives TLE
 // not using fastio gives TLE
 
+// empty vector, even times character, only one odd character are palindromes
+
 #include<bits/stdc++.h>
 using namespace std;
 // # define int long long
