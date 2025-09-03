@@ -7,6 +7,8 @@
 // empty vector, even times character, only one odd character are palindromes
 // We need to get the query answer as : in subtree of node v(inclusive does not change solution, both are palindrome),
 // take all nodes at depth(1-indexed) and check if they could form palindrome
+// for this we get TLE on naive approach by checking each subtree of v at height h
+
 #include<bits/stdc++.h>
 using namespace std;
 // # define int long long
