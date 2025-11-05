@@ -1,0 +1,22 @@
+https://codeforces.com/blog/entry/137990
+
+https://judge.yosupo.jp/
+
+NTT: https://www.apfloat.org/ntt.html
+primitive root: https://www.apfloat.org/prim.html
+
+Fermat Theorem: 
+From elementary number theory we know, that for all integers a, 
+when p is prime (and a is positive and less than p)
+a^(p-1)=1 (mod p)
+
+By Dirichlet’s theorem on primes in arithmetic progressions, there are indeed infinitely many primes in any progression 
+𝑎, 𝑎+𝑞, 𝑎+2𝑞,... provided gcd(𝑎, 𝑞) = 1 gcd(a,q)=1. But the density of those primes among all numbers up to X is roughly
+![Dirichlet Theorem](image.png)
+As 𝑚 grows, 𝜑(2𝑚) doubles each time, so the progression thins out by a factor of two for each additional bit of 𝑚.
+
+Number of approximate prime numbers upto X = 1 / ln X (Primality Test)
+
+https://codeforces.com/blog/entry/75326
+
+More fast multiplication methods: https://drive.google.com/file/d/1B9BIfATnI_qL6rYiE5hY9bh20SMVmHZ7/view

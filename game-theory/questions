@@ -1,0 +1,20 @@
+https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/day-1-a-chessboard-game
+
+https://atcoder.jp/contests/dp/tasks/dp_k
+
+https://www.hackerrank.com/contests/5-days-of-game-theory/challenges
+
+https://www.math.ucla.edu/~tom/Games/chomp.html
+
+https://www.hackerrank.com/contests/5-days-of-game-theory/challenges/day-2-nim-game
+
+
+
+
+how to play misere unbounded nim game ? 
+Misère Nim is exactly like the standard Nim game, except for one critical difference. 
+If the size of every pile is 1, then we need to treat it as a special case where we count the number of piles. 
+If the count is even, then the first player will win; 
+if the count is odd, then the first player will lose.
+
+for even pile case, you just need to copy the other players move; while for odd, empty one pile and again there are even piles
