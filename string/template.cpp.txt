@@ -1,0 +1,410 @@
+// Combined Suffix Data Structures Template (enhanced)
+// File: suffix_templates_enhanced.cpp
+// Compile: g++ -std=c++17 -O2 suffix_templates_enhanced.cpp -o suffix_templates
+// Enhancements added:
+//  - SAM: endpos occurrence propagation (calc_occurrences), firstpos for states, occurrences_of(pattern), firstpos_of(pattern)
+//  - SA: pattern occurrence count via equal_range, kth lexicographic substring, distinct substring counts by length
+//  - SA: optional pos_owner array (for generalized SA tasks) with setter
+//  - Utility demos in main() to exercise the new helpers
+
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+// ------------------------- Suffix Array + LCP + RMQ -------------------------
+struct SuffixArray {
+    string s;               // original string
+    int n = 0;                  // length
+    vector<int> sa;         // suffix array: sa[pos] = starting index of pos-th smallest suffix
+    vector<int> rnk;        // rnk[i] = rank of suffix starting at i
+    vector<int> lcp;        // lcp[i] = LCP(sa[i], sa[i-1]) (lcp[0]=0)
+
+    // Sparse table for RMQ on lcp to answer LCP of any two suffixes in O(1)
+    vector<vector<int>> st;
+    vector<int> lg2;
+
+    // optional mapping from position in s -> owner id (useful for generalized SA on joined string)
+    vector<int> pos_owner; // size n; owner id for each character position
+
+    SuffixArray() {}
+    SuffixArray(const string& str) { build(str); }
+
+    void build(const string& str) {
+        s = str;
+        n = (int)s.size();
+        if (n == 0) return;
+        build_sa();
+        build_lcp();
+        build_rmq();
+        pos_owner.assign(n, -1);
+    }
+
+private:
+    void build_sa() {
+        sa.resize(n);
+        rnk.resize(n);
+        vector<int> tmp(n);
+        for (int i = 0; i < n; ++i) {
+            sa[i] = i;
+            rnk[i] = (unsigned char)s[i];
+        }
+        for (int k = 1; k < n; k <<= 1) {
+            auto cmp = [&](int a, int b) {
+                if (rnk[a] != rnk[b]) return rnk[a] < rnk[b];
+                int ra = a + k < n ? rnk[a + k] : -1;
+                int rb = b + k < n ? rnk[b + k] : -1;
+                return ra < rb;
+            };
+            sort(sa.begin(), sa.end(), cmp);
+            tmp[sa[0]] = 0;
+            for (int i = 1; i < n; ++i) {
+                tmp[sa[i]] = tmp[sa[i-1]] + (cmp(sa[i-1], sa[i]) ? 1 : 0);
+            }
+            rnk = tmp;
+            if (rnk[sa[n-1]] == n-1) break; // all ranks distinct
+        }
+    }
+
+    void build_lcp() {
+        lcp.assign(n, 0);
+        vector<int> inv(n);
+        for (int i = 0; i < n; ++i) inv[sa[i]] = i;
+        int k = 0;
+        for (int i = 0; i < n; ++i) {
+            if (inv[i] == 0) { k = 0; continue; }
+            int j = sa[inv[i]-1];
+            while (i + k < n && j + k < n && s[i + k] == s[j + k]) ++k;
+            lcp[inv[i]] = k;
+            if (k) --k;
+        }
+        // recompute rnk as SA-order rank
+        for (int i = 0; i < n; ++i) rnk[sa[i]] = i;
+    }
+
+    void build_rmq() {
+        int m = (int)lcp.size();
+        if (m == 0) return;
+        lg2.assign(m+1, 0);
+        for (int i = 2; i <= m; ++i) lg2[i] = lg2[i/2] + 1;
+        int K = lg2[m] + 1;
+        st.assign(K, vector<int>(m));
+        for (int i = 0; i < m; ++i) st[0][i] = lcp[i];
+        for (int k = 1; k < K; ++k) {
+            for (int i = 0; i + (1<<k) <= m; ++i) {
+                st[k][i] = min(st[k-1][i], st[k-1][i + (1<<(k-1))]);
+            }
+        }
+    }
+
+public:
+    // lcp of suffixes starting at i and j
+    int lcp_suffixes(int i, int j) const {
+        if (i == j) return n - i;
+        int ri = rnk[i];
+        int rj = rnk[j];
+        if (ri > rj) swap(ri, rj);
+        // query min on lcp[ri+1 .. rj]
+        return lcp_rmq(ri+1, rj);
+    }
+
+    // LCP of suffixes at sa[a] and sa[b] where 0<=a,b<n
+    int lcp_by_sa_index(int a, int b) const {
+        if (a == b) return n - sa[a];
+        if (a > b) swap(a,b);
+        return lcp_rmq(a+1,b);
+    }
+
+    // pattern existence via binary search
+    bool contains(const string& pat) const {
+        int m = (int)pat.size();
+        int lo = 0, hi = n-1;
+        while (lo <= hi) {
+            int mid = (lo + hi) >> 1;
+            int cmp = compare_substr(sa[mid], pat);
+            if (cmp == 0) return true;
+            if (cmp < 0) lo = mid + 1; else hi = mid - 1;
+        }
+        return false;
+    }
+
+    // lower_bound/upper_bound like searches to get range of suffixes with pat as prefix
+    pair<int,int> equal_range(const string& pat) const {
+        int m = (int)pat.size();
+        int lo = 0, hi = n;
+        // first >=
+        while (lo < hi) {
+            int mid = (lo + hi) / 2;
+            int cmp = compare_substr(sa[mid], pat);
+            if (cmp >= 0) hi = mid; else lo = mid + 1;
+        }
+        int L = lo;
+        lo = 0; hi = n;
+        // first >
+        while (lo < hi) {
+            int mid = (lo + hi) / 2;
+            int cmp = compare_substr(sa[mid], pat);
+            if (cmp > 0) hi = mid; else lo = mid + 1;
+        }
+        int R = lo;
+        return {L, R}; // suffixes in [L, R) have pat as prefix
+    }
+
+    // return number of occurrences of pattern (exact occurrences as substring starting position)
+    long long occurrences_count(const string& pat) const {
+        if (n == 0) return 0;
+        auto pr = equal_range(pat);
+        return (long long)(pr.second - pr.first);
+    }
+
+    // kth lexicographic substring (1-based k). Returns empty string if k out of range.
+    string kth_substring(long long k) const {
+        if (n == 0) return string();
+        // number of new substrings contributed by suffix i is (n - sa[i]) - lcp[i]
+        for (int i = 0; i < n; ++i) {
+            long long newcnt = (long long)(n - sa[i]) - (long long)lcp[i];
+            if (k > newcnt) k -= newcnt; else {
+                int len = lcp[i] + (int)k; // desired substring length
+                return s.substr(sa[i], len);
+            }
+        }
+        return string();
+    }
+
+    // distinct substring counts by length: returns vector cnt where cnt[len] = number of distinct substrings of length 'len'
+    vector<long long> distinct_count_by_length() const {
+        vector<long long> cnt(n+1, 0); // 1..n
+        if (n == 0) return cnt;
+        vector<long long> diff(n+2, 0);
+        for (int i = 0; i < n; ++i) {
+            int L = n - sa[i];
+            int a = lcp[i] + 1;
+            int b = L;
+            if (a <= b) {
+                diff[a] += 1;
+                diff[b+1] -= 1;
+            }
+        }
+        long long cur = 0;
+        for (int len = 1; len <= n; ++len) {
+            cur += diff[len];
+            cnt[len] = cur;
+        }
+        return cnt;
+    }
+
+    // expose members for convenience
+    const vector<int>& get_sa() const { return sa; }
+    const vector<int>& get_lcp() const { return lcp; }
+    const vector<int>& get_rank() const { return rnk; }
+
+    // optional: set mapping from position in s to owner id (for generalized SA built from joined strings). size(owner) must be n
+    void set_pos_owner(const vector<int>& owner) { pos_owner = owner; }
+    const vector<int>& get_pos_owner() const { return pos_owner; }
+
+private:
+    int compare_substr(int i, const string& pat) const {
+        int m = (int)pat.size();
+        for (int k = 0; k < m; ++k) {
+            if (i + k >= n) return -1; // suffix shorter -> smaller
+            if (s[i+k] != pat[k]) return (unsigned char)s[i+k] - (unsigned char)pat[k];
+        }
+        return 0; // pat is prefix of suffix
+    }
+
+    int lcp_rmq(int L, int R) const {
+        if (L > R) return 0;
+        int len = R - L + 1;
+        int k = lg2[len];
+        return min(st[k][L], st[k][R - (1<<k) + 1]);
+    }
+};
+
+// ------------------------------ Suffix Automaton ------------------------------
+struct SuffixAutomaton {
+    struct State {
+        int len = 0, link = -1;
+        unordered_map<char,int> next;
+        // additional fields
+        int firstpos = -1;   // one end position (we will propagate to get rightmost endpos)
+        long long occ = 0;   // number of endpos (occurrence count)
+    };
+    vector<State> st;
+    int last = 0;
+
+    SuffixAutomaton() { st.reserve(2); st.push_back(State()); last = 0; }
+    SuffixAutomaton(int expected_len) { st.reserve(max(2, expected_len*2)); st.push_back(State()); last = 0; }
+
+    void reset() { st.clear(); st.push_back(State()); last = 0; }
+
+    void extend(char c) {
+        int cur = (int)st.size();
+        st.push_back(State());
+        st[cur].len = st[last].len + 1;
+        st[cur].firstpos = st[cur].len - 1;
+        st[cur].occ = 1; // each newly created state corresponding to new last position should count 1
+        int p = last;
+        while (p != -1 && !st[p].next.count(c)) {
+            st[p].next[c] = cur;
+            p = st[p].link;
+        }
+        if (p == -1) {
+            st[cur].link = 0;
+        } else {
+            int q = st[p].next[c];
+            if (st[p].len + 1 == st[q].len) {
+                st[cur].link = q;
+            } else {
+                int clone = (int)st.size();
+                st.push_back(st[q]); // copy
+                st[clone].len = st[p].len + 1;
+                // clones should not count as terminal endpos
+                st[clone].occ = 0;
+                // firstpos of clone remains same as q
+                while (p != -1 && st[p].next[c] == q) {
+                    st[p].next[c] = clone;
+                    p = st[p].link;
+                }
+                st[q].link = st[cur].link = clone;
+            }
+        }
+        last = cur;
+    }
+
+    void build(const string& s) {
+        reset();
+        st.reserve(max(2, (int)s.size()*2));
+        for (char c : s) extend(c);
+    }
+
+    // number of distinct substrings = sum(len[v] - len[link[v]]) for v>=1
+    long long count_distinct_substrings() const {
+        long long ans = 0;
+        for (size_t v = 1; v < st.size(); ++v) {
+            ans += st[v].len - st[st[v].link].len;
+        }
+        return ans;
+    }
+
+    // After building automaton, call this to compute occ (endpos counts) and propagate firstpos (rightmost)
+    void calc_occurrences() {
+        if (st.empty()) return;
+        int maxlen = 0;
+        for (auto &state : st) maxlen = max(maxlen, state.len);
+        vector<vector<int>> bucket(maxlen+1);
+        for (int i = 0; i < (int)st.size(); ++i) bucket[st[i].len].push_back(i);
+        // iterate from longer to shorter
+        for (int L = maxlen; L >= 0; --L) {
+            for (int v : bucket[L]) {
+                if (st[v].link != -1) {
+                    st[st[v].link].occ += st[v].occ;
+                    // propagate firstpos (we keep the rightmost end position)
+                    st[st[v].link].firstpos = max(st[st[v].link].firstpos, st[v].firstpos);
+                }
+            }
+        }
+    }
+
+    // occurrences of pattern as substring (number of different end positions) -- requires calc_occurrences() called before
+    long long occurrences_of(const string& pat) const {
+        int v = 0;
+        for (char c : pat) {
+            if (!st[v].next.count(c)) return 0;
+            v = st[v].next.at(c);
+        }
+        return st[v].occ;
+    }
+
+    // rightmost ending position (0-indexed) of some occurrence of pat, -1 if not present (requires calc_occurrences)
+    int rightmost_endpos_of(const string& pat) const {
+        int v = 0;
+        for (char c : pat) {
+            if (!st[v].next.count(c)) return -1;
+            v = st[v].next.at(c);
+        }
+        return st[v].firstpos;
+    }
+
+    // Longest Common Substring with t (assuming SAM built on s)
+    string longest_common_substring(const string& t) const {
+        int v = 0, l = 0, best = 0, bestpos = -1;
+        for (int i = 0; i < (int)t.size(); ++i) {
+            char c = t[i];
+            if (st[v].next.count(c)) {
+                v = st[v].next.at(c);
+                ++l;
+            } else {
+                while (v != -1 && !st[v].next.count(c)) v = st[v].link;
+                if (v == -1) { v = 0; l = 0; }
+                else { l = st[v].len + 1; v = st[v].next.at(c); }
+            }
+            if (l > best) { best = l; bestpos = i; }
+        }
+        if (best == 0) return string();
+        return t.substr(bestpos - best + 1, best);
+    }
+};
+
+// ---------------------------------- Demo / Main ----------------------------------
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cout << "Combined suffix structures demo (enhanced)\n";
+    cout << "1) Suffix Array + LCP + RMQ demo\n";
+    cout << "2) Suffix Automaton demo\n";
+    cout << "Enter 1 or 2: ";
+    int mode; if (!(cin >> mode)) return 0;
+
+    if (mode == 1) {
+        string s; cout << "Enter string (no spaces): "; cin >> s;
+        SuffixArray SA(s);
+        const auto &sa = SA.get_sa();
+        const auto &lcp = SA.get_lcp();
+        cout << "i\tSA[i]\tLCP\tSuffix\n";
+        for (int i = 0; i < (int)sa.size(); ++i) {
+            cout << i << '\t' << sa[i] << '\t' << lcp[i] << '\t' << s.substr(sa[i]) << '\n';
+        }
+
+        cout << "Enter pattern to check (no spaces): ";
+        string pat; cin >> pat;
+        cout << (SA.contains(pat) ? "Pattern found\n" : "Pattern NOT found\n");
+        cout << "Occurrences (via SA) = " << SA.occurrences_count(pat) << "\n";
+
+        cout << "Enter two suffix start indices to compute LCP (i j): ";
+        int a, b; cin >> a >> b;
+        if (a >= 0 && a < (int)s.size() && b >= 0 && b < (int)s.size()) {
+            cout << "LCP(s[" << a << "..], s[" << b << "..]) = " << SA.lcp_suffixes(a,b) << '\n';
+        } else cout << "Invalid indices\n";
+
+        cout << "Enter k for k-th lexicographic substring (1-based): ";
+        long long k; cin >> k;
+        string kth = SA.kth_substring(k);
+        if (kth.empty()) cout << "k out of range\n"; else cout << "k-th substring = " << kth << "\n";
+
+        auto counts_by_len = SA.distinct_count_by_length();
+        cout << "Distinct substring counts by length:\n";
+        for (int len = 1; len < (int)counts_by_len.size(); ++len) {
+            if (counts_by_len[len]) cout << "len=" << len << ": " << counts_by_len[len] << "\n";
+        }
+    } else {
+        string s; cout << "Enter string to build SAM on (no spaces): "; cin >> s;
+        SuffixAutomaton sam((int)s.size());
+        sam.build(s);
+        // prepare occurrence propagation
+        sam.calc_occurrences();
+        cout << "Distinct substrings = " << sam.count_distinct_substrings() << "\n";
+        cout << "Enter another string to compute LCS with first: ";
+        string t; cin >> t;
+        string lcs = sam.longest_common_substring(t);
+        cout << "Longest common substring: '" << lcs << "' (len=" << lcs.size() << ")\n";
+
+        cout << "Enter a pattern to get occurrence count and rightmost position: ";
+        string pat; cin >> pat;
+        cout << "Occurrences (via SAM) = " << sam.occurrences_of(pat) << "\n";
+        int rpos = sam.rightmost_endpos_of(pat);
+        if (rpos == -1) cout << "Pattern not found\n";
+        else cout << "Rightmost occurrence ends at index " << rpos << " (start=" << (rpos - (int)pat.size() + 1) << ")\n";
+    }
+
+    return 0;
+}

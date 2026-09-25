@@ -1,0 +1,10 @@
+https://www.cut-the-knot.org/nim_st.shtml
+
+To win this unbounded normal nim game, you need to use grundy theorem for multiple piles or say nim sum
+that is a ^ b ^ c ^... and check if winning position is = 0 or != 0
+
+Now, here to win you need to make such triplet so that it becomes a^b^c == 0 
+
+check out resource section for more elaboration. for easy navigation, read the '*emilysun.pdf'
+
+For base conditions, mark win or lose. Then from the rest, traverse to the base conditions and mark them as always.

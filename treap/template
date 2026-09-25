@@ -1,0 +1,249 @@
+// implicit_treap_template.cpp
+// C++17 implicit treap (sequence treap) with lazy add & reverse, range sum.
+// Author: ChatGPT
+
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+std::mt19937_64 rng((unsigned)chrono::steady_clock::now().time_since_epoch().count());
+
+struct Node {
+    ll val;        // value at this position
+    ll sum;        // sum of subtree
+    int sz;        // subtree size
+    uint64_t pr;   // priority
+    ll add;        // lazy addition
+    bool rev;      // lazy reverse flag
+    Node *l, *r;
+    Node(ll v = 0) : val(v), sum(v), sz(1), pr(rng()), add(0), rev(false), l(nullptr), r(nullptr) {}
+};
+
+inline int getsz(Node* t) { return t ? t->sz : 0; }
+inline ll getsum(Node* t) { return t ? t->sum : 0; }
+
+void upd(Node* t) {
+    if(!t) return;
+    t->sz = 1 + getsz(t->l) + getsz(t->r);
+    t->sum = t->val + getsum(t->l) + getsum(t->r);
+}
+
+// apply add to node (update node's val and subtree sum and tag)
+void apply_add(Node* t, ll v) {
+    if(!t) return;
+    t->add += v;
+    t->val += v;
+    t->sum += v * (ll)t->sz;
+}
+
+// apply reverse to node (swap children and toggle flag)
+void apply_rev(Node* t) {
+    if(!t) return;
+    t->rev ^= true;
+    swap(t->l, t->r);
+    // sum and val unchanged
+}
+
+// push lazy tags to children
+void push(Node* t) {
+    if(!t) return;
+    if(t->add != 0) {
+        if(t->l) apply_add(t->l, t->add);
+        if(t->r) apply_add(t->r, t->add);
+        t->add = 0;
+    }
+    if(t->rev) {
+        if(t->l) apply_rev(t->l);
+        if(t->r) apply_rev(t->r);
+        t->rev = false;
+    }
+}
+
+// split first cnt nodes into l, rest into r (0 <= cnt <= size(t))
+void split(Node* t, int cnt, Node* &l, Node* &r) {
+    if(!t) { l = r = nullptr; return; }
+    push(t);
+    int left_sz = getsz(t->l);
+    if(cnt <= left_sz) {
+        // desired prefix is entirely in left subtree
+        split(t->l, cnt, l, t->l);
+        r = t;
+        upd(r);
+    } else {
+        // take root + part of right
+        split(t->r, cnt - left_sz - 1, t->r, r);
+        l = t;
+        upd(l);
+    }
+}
+
+// merge two treaps a and b where all elements in a come before b
+Node* merge(Node* a, Node* b) {
+    if(!a) return b;
+    if(!b) return a;
+    if(a->pr > b->pr) {
+        push(a);
+        a->r = merge(a->r, b);
+        upd(a);
+        return a;
+    } else {
+        push(b);
+        b->l = merge(a, b->l);
+        upd(b);
+        return b;
+    }
+}
+
+// insert value v at position pos (1-based indexing: pos in [1..n+1])
+void insert_at(Node* &root, int pos, ll v) {
+    Node *a, *b;
+    split(root, pos-1, a, b);
+    Node* nd = new Node(v);
+    root = merge(a, merge(nd, b));
+}
+
+// erase element at position pos (1-based)
+void erase_at(Node* &root, int pos) {
+    Node *a, *b, *m, *c;
+    split(root, pos-1, a, b);
+    split(b, 1, m, c); // m is node at pos
+    // delete m subtree
+    if(m) {
+        // free nodes in m
+        std::function<void(Node*)> fre = [&](Node* t){
+            if(!t) return;
+            fre(t->l); fre(t->r);
+            delete t;
+        };
+        fre(m);
+    }
+    root = merge(a, c);
+}
+
+// range add: add v to [l..r] (1-based inclusive)
+void range_add(Node* &root, int lpos, int rpos, ll v) {
+    Node *a,*b,*m,*c;
+    split(root, lpos-1, a, b);
+    split(b, rpos-lpos+1, m, c);
+    if(m) apply_add(m, v);
+    root = merge(a, merge(m, c));
+}
+
+// range reverse [l..r]
+void range_reverse(Node* &root, int lpos, int rpos) {
+    Node *a,*b,*m,*c;
+    split(root, lpos-1, a, b);
+    split(b, rpos-lpos+1, m, c);
+    if(m) apply_rev(m);
+    root = merge(a, merge(m, c));
+}
+
+// range sum query [l..r]
+ll range_sum(Node* &root, int lpos, int rpos) {
+    Node *a,*b,*m,*c;
+    split(root, lpos-1, a, b);
+    split(b, rpos-lpos+1, m, c);
+    ll ans = getsum(m);
+    root = merge(a, merge(m, c));
+    return ans;
+}
+
+// kth element (1-based). Returns pointer to node or nullptr.
+Node* kth(Node* t, int k) {
+    if(!t || k <= 0 || k > getsz(t)) return nullptr;
+    push(t);
+    int ls = getsz(t->l);
+    if(k <= ls) return kth(t->l, k);
+    if(k == ls + 1) return t;
+    return kth(t->r, k - ls - 1);
+}
+
+// inorder traversal (collect values) — useful for debugging
+void inorder_collect(Node* t, vector<ll> &out) {
+    if(!t) return;
+    push(t);
+    inorder_collect(t->l, out);
+    out.push_back(t->val);
+    inorder_collect(t->r, out);
+}
+
+// delete whole treap
+void delete_treap(Node* t) {
+    if(!t) return;
+    delete_treap(t->l);
+    delete_treap(t->r);
+    delete t;
+}
+
+// Build from vector in O(n) using Cartesian stack method (keeps order of vector as in-order)
+Node* build_from_vector(const vector<ll> &vals) {
+    int n = (int)vals.size();
+    if(n == 0) return nullptr;
+    vector<Node*> st;
+    st.reserve(n);
+    vector<Node*> nodes(n);
+    for(int i=0;i<n;++i) nodes[i] = new Node(vals[i]);
+    for(int i=0;i<n;++i) {
+        Node* cur = nodes[i];
+        cur->l = cur->r = nullptr;
+        Node* last = nullptr;
+        while(!st.empty() && st.back()->pr < cur->pr) {
+            last = st.back();
+            st.pop_back();
+        }
+        cur->l = last;
+        if(!st.empty()) st.back()->r = cur;
+        st.push_back(cur);
+    }
+    // root is bottom of stack
+    Node* root = st.front();
+    // fix aggregated values by postorder traversal
+    std::function<void(Node*)> dfs_upd = [&](Node* t){
+        if(!t) return;
+        dfs_upd(t->l);
+        dfs_upd(t->r);
+        t->add = 0;
+        t->rev = false;
+        upd(t);
+    };
+    dfs_upd(root);
+    return root;
+}
+
+/* ============================
+   Example usage / quick test
+   ============================
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    // build sequence [1,2,3,4,5]
+    vector<ll> a = {1,2,3,4,5};
+    Node* root = build_from_vector(a);
+
+    // add +10 to range [2..4]
+    range_add(root, 2, 4, 10);
+
+    // reverse [1..3]
+    range_reverse(root, 1, 3);
+
+    // query sum [1..5]
+    cout << range_sum(root, 1, 5) << "\n";
+
+    // insert 100 at position 3
+    insert_at(root, 3, 100);
+
+    // erase position 4
+    erase_at(root, 4);
+
+    // print current sequence
+    vector<ll> out;
+    inorder_collect(root, out);
+    for(auto x : out) cout << x << " "; cout << "\n";
+
+    delete_treap(root);
+    return 0;
+}
+*/
+

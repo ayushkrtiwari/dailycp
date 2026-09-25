@@ -14,6 +14,11 @@
 // Also for knowing subtree nodes of v we use tin[v] and tout[v] as lower bound and upper bound of subtree nodes timer.
 // Hence we can know now if the letters could form palindrome
 // Now we get to optimise the part : check all odd occurrences of alphabets in the subtree
+// To do this part, we can use xor using array by storing the alphabets in freq array.
+// To answer query, we can directly xor : prefxr[end] ^ (start == 0 ? 0 : prefxr[start - 1])
+// But w8, this also gives TLE, means we need to optimise this storing part too, since we are using xor, which only uses parity
+// hence we can store as 0(even occurrence) and 1(odd occurrence) in only 1 int variable using 26 bits in it.
+// Thus, we get the most optimised code.
 
 #include<bits/stdc++.h>
 using namespace std;
